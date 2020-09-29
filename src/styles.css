@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body {
+  background-color: #F4F4F4;
+  margin: 0;
+}
+
+a {
+  color: #5D5D5A !important;
+  text-decoration: none;
+  background-image: none !important;
+}
+
+a:link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #06c;
+}
+
+
+.bg-primary-color {
+  background-color: #FFA45C !important;
+}
+
+.bg-secondary-color {
+  background-color: #5D5D5A !important;
+}
+
+.primary-color {
+  background-color: #FFA45C !important;
+}
+.secondary-color {
+  background-color: #5D5D5A !important;
+}
+
+.custom-primary-button {
+  color: #5D5D5A !important;
+  background: #FFA45C !important;
+  border: 1px solid #FFA45C !important;
+}
+
