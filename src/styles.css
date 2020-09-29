@@ -18,6 +18,10 @@ a:link {
   color: #06c;
 }
 
+.container {
+  padding: 0 10%;
+}
+
 
 .bg-primary-color {
   background-color: #FFA45C !important;

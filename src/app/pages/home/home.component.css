@@ -1,0 +1,5 @@
+.bg-wave {
+  background-image: url("src/assets/image/wave-bg.svg");
+  width: 100%;
+  min-height: 300px;
+}
