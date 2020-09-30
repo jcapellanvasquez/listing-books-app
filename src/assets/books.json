@@ -1,0 +1,1001 @@
+[{
+  "id": "1NMe4jZPjqpfUeRRfmdqVSGu69Yxtzjdd5",
+  "title": "Days of Glory",
+  "description": "posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet",
+  "likes": 98,
+  "createDate": "10/19/2019",
+  "isNew": true,
+  "pages": 83,
+  "author": "Shoshanna Wloch",
+  "img": "http://dummyimage.com/240x208.jpg/cc0000/ffffff"
+}, {
+  "id": "15wS7RDUKfquFFhgNSPtbzpfXBxKe8M95K",
+  "title": "Weeds",
+  "description": "nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros",
+  "likes": 45,
+  "createDate": "6/25/2020",
+  "isNew": false,
+  "pages": 34,
+  "author": "Elly Kindle",
+  "img": "http://dummyimage.com/139x169.bmp/5fa2dd/ffffff"
+}, {
+  "id": "18Ej3AWiAmLD6ZFTfahRerBeScopvinnSz",
+  "title": "Woodstock Diary",
+  "description": "nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis",
+  "likes": 12,
+  "createDate": "2/14/2020",
+  "isNew": false,
+  "pages": 45,
+  "author": "Aurlie McNellis",
+  "img": "http://dummyimage.com/109x103.jpg/ff4444/ffffff"
+}, {
+  "id": "1MBhwsvE65KrtbzPaj5KatzbumYcojPP3",
+  "title": "Rocky III",
+  "description": "erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus",
+  "likes": 22,
+  "createDate": "7/30/2020",
+  "isNew": true,
+  "pages": 16,
+  "author": "Hanni Mateos",
+  "img": "http://dummyimage.com/209x139.bmp/dddddd/000000"
+}, {
+  "id": "12cBxm2fWJQawqM2wieWYYYwgL6wySQ6o9",
+  "title": "Chu Chin Chow",
+  "description": "enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec",
+  "likes": 67,
+  "createDate": "9/27/2020",
+  "isNew": false,
+  "pages": 27,
+  "author": "Filbert Letchford",
+  "img": "http://dummyimage.com/100x104.bmp/dddddd/000000"
+}, {
+  "id": "1DUFPZz22TnpLZm5EUiYachsAFZFK7Hzc1",
+  "title": "Jesse Stone: Sea Change",
+  "description": "pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est",
+  "likes": 31,
+  "createDate": "3/20/2020",
+  "isNew": true,
+  "pages": 85,
+  "author": "Cecelia Lantiff",
+  "img": "http://dummyimage.com/150x133.bmp/ff4444/ffffff"
+}, {
+  "id": "1He3zBngfeuyvxARPy4zTf8RfQRxS2V1WQ",
+  "title": "Gumball Rally, The",
+  "description": "morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede",
+  "likes": 49,
+  "createDate": "11/5/2019",
+  "isNew": true,
+  "pages": 13,
+  "author": "Randene Grossman",
+  "img": "http://dummyimage.com/127x174.png/cc0000/ffffff"
+}, {
+  "id": "19c2uaC26wLiX7ZzTmrVVe2c617ZXcSqjv",
+  "title": "Wolf Children (Okami kodomo no ame to yuki)",
+  "description": "volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus",
+  "likes": 40,
+  "createDate": "7/22/2020",
+  "isNew": true,
+  "pages": 25,
+  "author": "Far Adamkiewicz",
+  "img": "http://dummyimage.com/216x240.bmp/ff4444/ffffff"
+}, {
+  "id": "19F7zDi7WvcUjuEsUq3EZCM37qAmTi9yST",
+  "title": "Sione's Wedding (Samoan Wedding)",
+  "description": "sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus",
+  "likes": 52,
+  "createDate": "9/24/2020",
+  "isNew": false,
+  "pages": 70,
+  "author": "Jamima Farden",
+  "img": "http://dummyimage.com/248x162.png/5fa2dd/ffffff"
+}, {
+  "id": "1Cup5As6JYc28PXqPkuZaRMhoTb2uoVmdQ",
+  "title": "A Bright Shining Lie",
+  "description": "rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo",
+  "likes": 85,
+  "createDate": "5/12/2020",
+  "isNew": false,
+  "pages": 35,
+  "author": "Emmaline Faber",
+  "img": "http://dummyimage.com/117x158.bmp/ff4444/ffffff"
+}, {
+  "id": "1fA2ZfEMr6ER7babzm6mrdnsR2r5MnSAr",
+  "title": "Twonky, The",
+  "description": "pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam",
+  "likes": 41,
+  "createDate": "6/9/2020",
+  "isNew": true,
+  "pages": 71,
+  "author": "Marwin Huske",
+  "img": "http://dummyimage.com/172x205.png/5fa2dd/ffffff"
+}, {
+  "id": "1BK82qTrnYWLzyAu8ywDc9iJH5992xwBJh",
+  "title": "Flash Gordon Conquers the Universe",
+  "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra",
+  "likes": 67,
+  "createDate": "9/2/2020",
+  "isNew": false,
+  "pages": 19,
+  "author": "Flore Van Arsdale",
+  "img": "http://dummyimage.com/205x216.png/ff4444/ffffff"
+}, {
+  "id": "1K86JxxiDArScCAxcPrt5rjvTTtCUSDc6s",
+  "title": "Good Night to Die, A",
+  "description": "tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu",
+  "likes": 22,
+  "createDate": "5/9/2020",
+  "isNew": false,
+  "pages": 54,
+  "author": "Carmelle MacGowan",
+  "img": "http://dummyimage.com/200x199.png/cc0000/ffffff"
+}, {
+  "id": "18fEifawsAA2oMBEq8kPLJpD7QmoAJA1dh",
+  "title": "Three Kings",
+  "description": "nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel",
+  "likes": 25,
+  "createDate": "2/6/2020",
+  "isNew": false,
+  "pages": 41,
+  "author": "Merry Yves",
+  "img": "http://dummyimage.com/141x231.jpg/5fa2dd/ffffff"
+}, {
+  "id": "1LFskHVQRpK17aLE92vrSLnRSYqAPR8YZx",
+  "title": "Babysitter Wanted",
+  "description": "proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate",
+  "likes": 49,
+  "createDate": "9/6/2020",
+  "isNew": true,
+  "pages": 84,
+  "author": "Georgeanne Chevins",
+  "img": "http://dummyimage.com/205x210.bmp/cc0000/ffffff"
+}, {
+  "id": "18USSkBiGN49gudfwwBdHhLVGX1G2aYB2h",
+  "title": "Dangerous Method, A",
+  "description": "eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat",
+  "likes": 51,
+  "createDate": "7/19/2020",
+  "isNew": false,
+  "pages": 14,
+  "author": "Irena Cadalleder",
+  "img": "http://dummyimage.com/136x242.jpg/5fa2dd/ffffff"
+}, {
+  "id": "12L2AfkbJGW6c1BrNZ2sHjP3YK7UDswDjo",
+  "title": "Veteran, The",
+  "description": "integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia",
+  "likes": 2,
+  "createDate": "7/14/2020",
+  "isNew": false,
+  "pages": 19,
+  "author": "Lyle Ivashechkin",
+  "img": "http://dummyimage.com/235x212.png/5fa2dd/ffffff"
+}, {
+  "id": "171g3CYuQxUYKwKkPmme9gJkpdAD2cDXmU",
+  "title": "Chaos",
+  "description": "consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum",
+  "likes": 1,
+  "createDate": "12/29/2019",
+  "isNew": false,
+  "pages": 40,
+  "author": "Ephraim Albertson",
+  "img": "http://dummyimage.com/249x201.jpg/dddddd/000000"
+}, {
+  "id": "18F1mdhfE1SqXQUw3iwrZUPmX5tvtAyVHJ",
+  "title": "Tsunami: Caught on Camera",
+  "description": "maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui",
+  "likes": 50,
+  "createDate": "2/11/2020",
+  "isNew": true,
+  "pages": 42,
+  "author": "Red Duffin",
+  "img": "http://dummyimage.com/110x231.jpg/ff4444/ffffff"
+}, {
+  "id": "1Kasi3pAdgJjS3xFxKDtH9oVM4Fdn6X8Vj",
+  "title": "7 Dollars on the Red (Sette dollari sul rosso)",
+  "description": "tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non",
+  "likes": 94,
+  "createDate": "7/7/2020",
+  "isNew": false,
+  "pages": 61,
+  "author": "Letisha Babar",
+  "img": "http://dummyimage.com/174x245.png/cc0000/ffffff"
+}, {
+  "id": "1GnEC5S9UtW7iaMDCcMxTEndrQr8uGeSyu",
+  "title": "Along Came Jones",
+  "description": "curae duis faucibus accumsan odio curabitur convallis duis consequat dui",
+  "likes": 20,
+  "createDate": "10/17/2019",
+  "isNew": false,
+  "pages": 73,
+  "author": "Datha Heymes",
+  "img": "http://dummyimage.com/164x166.bmp/dddddd/000000"
+}, {
+  "id": "18bWsbQGKGhhvQBZkANQCTbxhqRGm7khRb",
+  "title": "1969",
+  "description": "lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus",
+  "likes": 27,
+  "createDate": "6/24/2020",
+  "isNew": false,
+  "pages": 39,
+  "author": "Brittaney Pifford",
+  "img": "http://dummyimage.com/109x140.png/5fa2dd/ffffff"
+}, {
+  "id": "1G9WME7qcM8ExDB7Ds6nC4LBUEWxDCzdYt",
+  "title": "King of Texas, The",
+  "description": "morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit",
+  "likes": 11,
+  "createDate": "10/24/2019",
+  "isNew": true,
+  "pages": 77,
+  "author": "Noby Paumier",
+  "img": "http://dummyimage.com/184x169.jpg/dddddd/000000"
+}, {
+  "id": "153kbZfsTj12f157sN5HpZvWS9Uvwb7VgP",
+  "title": "The Mountain of the Cannibal God",
+  "description": "pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis",
+  "likes": 87,
+  "createDate": "10/13/2019",
+  "isNew": true,
+  "pages": 30,
+  "author": "Willard Benadette",
+  "img": "http://dummyimage.com/115x233.png/dddddd/000000"
+}, {
+  "id": "1DJramxE54MWbK1eJv3XUdZdPctP5d4PgZ",
+  "title": "War",
+  "description": "velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo",
+  "likes": 50,
+  "createDate": "9/6/2020",
+  "isNew": false,
+  "pages": 74,
+  "author": "Linzy Ickovic",
+  "img": "http://dummyimage.com/227x187.bmp/dddddd/000000"
+}, {
+  "id": "1HvGhdgqL866kXhc4JUPU59TbsUDRaWUd6",
+  "title": "Erotic Man, The",
+  "description": "maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra",
+  "likes": 44,
+  "createDate": "2/3/2020",
+  "isNew": false,
+  "pages": 40,
+  "author": "Linc McPartling",
+  "img": "http://dummyimage.com/194x212.png/ff4444/ffffff"
+}, {
+  "id": "1QLQCn127JpJo4ZwBjH5aSJydhhzYMMQSW",
+  "title": "Slim Susie (Smala Sussie)",
+  "description": "consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus",
+  "likes": 70,
+  "createDate": "4/29/2020",
+  "isNew": true,
+  "pages": 90,
+  "author": "Maighdiln Relton",
+  "img": "http://dummyimage.com/172x119.jpg/cc0000/ffffff"
+}, {
+  "id": "18tHeCNityR7zB9JSXV2C2Ym3Gwqq2aDo9",
+  "title": "Cook the Thief His Wife & Her Lover, The",
+  "description": "augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra",
+  "likes": 77,
+  "createDate": "2/1/2020",
+  "isNew": false,
+  "pages": 87,
+  "author": "Misha Tort",
+  "img": "http://dummyimage.com/249x195.bmp/5fa2dd/ffffff"
+}, {
+  "id": "143dgXmoM3nPPUuHVm8Dr83bbRzwXGrhup",
+  "title": "29 Palms",
+  "description": "blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac",
+  "likes": 69,
+  "createDate": "1/28/2020",
+  "isNew": true,
+  "pages": 63,
+  "author": "Lovell Cropton",
+  "img": "http://dummyimage.com/202x109.bmp/cc0000/ffffff"
+}, {
+  "id": "1CYhxSNJpzRQH6WG8yTgyHFKqRgQrGJ8Sr",
+  "title": "L.I.E.",
+  "description": "hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at",
+  "likes": 84,
+  "createDate": "4/14/2020",
+  "isNew": false,
+  "pages": 8,
+  "author": "Allyce Stawell",
+  "img": "http://dummyimage.com/247x204.jpg/dddddd/000000"
+}, {
+  "id": "15dET7qKEQaNjm58ysD3giove8p1AJNxtK",
+  "title": "Beethoven's 5th",
+  "description": "mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer",
+  "likes": 34,
+  "createDate": "11/16/2019",
+  "isNew": true,
+  "pages": 71,
+  "author": "Lula Waith",
+  "img": "http://dummyimage.com/219x238.png/cc0000/ffffff"
+}, {
+  "id": "1CwrxjdYQjPoWCztqrzpjULrvjWw1HFTwd",
+  "title": "Monsieur Hire",
+  "description": "rutrum nulla nunc purus phasellus in felis donec semper sapien a libero",
+  "likes": 66,
+  "createDate": "11/8/2019",
+  "isNew": true,
+  "pages": 30,
+  "author": "Ada Domenge",
+  "img": "http://dummyimage.com/179x202.jpg/dddddd/000000"
+}, {
+  "id": "15GfZVr1EwbERfiE2gpdcZfAe2hMPRA2TV",
+  "title": "Mr. Moto's Gamble",
+  "description": "ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id",
+  "likes": 10,
+  "createDate": "3/6/2020",
+  "isNew": false,
+  "pages": 4,
+  "author": "Pauli Unwins",
+  "img": "http://dummyimage.com/248x156.jpg/dddddd/000000"
+}, {
+  "id": "1EWRyMGwmYr5xM3Z3fqWtbJQ8FqSA37UN",
+  "title": "Man, The",
+  "description": "non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla",
+  "likes": 4,
+  "createDate": "3/18/2020",
+  "isNew": false,
+  "pages": 56,
+  "author": "Roarke Hedworth",
+  "img": "http://dummyimage.com/106x132.jpg/cc0000/ffffff"
+}, {
+  "id": "1NY4PQeRPGFBkEsWdosGgHUGK5w6YaSRWT",
+  "title": "Career",
+  "description": "libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum",
+  "likes": 27,
+  "createDate": "12/13/2019",
+  "isNew": false,
+  "pages": 25,
+  "author": "Coral Seabright",
+  "img": "http://dummyimage.com/193x213.png/dddddd/000000"
+}, {
+  "id": "14vxRAwKE2DKf4G6LgqnuCbQEYZFTm25x1",
+  "title": "Unsaid, The",
+  "description": "eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia",
+  "likes": 32,
+  "createDate": "7/16/2020",
+  "isNew": false,
+  "pages": 57,
+  "author": "Shelagh Spores",
+  "img": "http://dummyimage.com/216x155.bmp/cc0000/ffffff"
+}, {
+  "id": "15AtdQXWUC6eP18N6iCoY4pV3SCPZ4k321",
+  "title": "Relax... It's Just Sex",
+  "description": "sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo",
+  "likes": 74,
+  "createDate": "12/19/2019",
+  "isNew": true,
+  "pages": 68,
+  "author": "Harriott Collidge",
+  "img": "http://dummyimage.com/247x114.png/ff4444/ffffff"
+}, {
+  "id": "135Nch4dJ4EDvKZJ22Mvk75TtVEcdJ4zNP",
+  "title": "Hiding Out",
+  "description": "tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum",
+  "likes": 24,
+  "createDate": "12/9/2019",
+  "isNew": true,
+  "pages": 69,
+  "author": "Bent Ugoni",
+  "img": "http://dummyimage.com/218x235.jpg/5fa2dd/ffffff"
+}, {
+  "id": "1CAhwtqMzdKJ3SDR5yLmJ3aUsLcRWjbYBZ",
+  "title": "Requiem for a Heavyweight",
+  "description": "eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis",
+  "likes": 78,
+  "createDate": "7/21/2020",
+  "isNew": true,
+  "pages": 17,
+  "author": "Lyda Gainsford",
+  "img": "http://dummyimage.com/178x122.bmp/dddddd/000000"
+}, {
+  "id": "1Ko4hSwwNhx7pvNFK36VHMKcPGUsEodwFR",
+  "title": "Ricky Gervais Live 3: Fame",
+  "description": "at turpis donec posuere metus vitae ipsum aliquam non mauris morbi",
+  "likes": 18,
+  "createDate": "6/23/2020",
+  "isNew": true,
+  "pages": 37,
+  "author": "Sosanna Brittle",
+  "img": "http://dummyimage.com/228x175.jpg/ff4444/ffffff"
+}, {
+  "id": "15FjHNU1xn6mkYg3A4bAgenVSzGLFFF7B6",
+  "title": "Violet & Daisy",
+  "description": "sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero",
+  "likes": 76,
+  "createDate": "4/14/2020",
+  "isNew": true,
+  "pages": 44,
+  "author": "Katrina Locks",
+  "img": "http://dummyimage.com/203x151.jpg/cc0000/ffffff"
+}, {
+  "id": "1F8STA7jWAeoJVDJSKB7hF6v4EdhmToqEN",
+  "title": "Stealing a Nation",
+  "description": "sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi",
+  "likes": 87,
+  "createDate": "10/13/2019",
+  "isNew": false,
+  "pages": 72,
+  "author": "Kinsley Hearn",
+  "img": "http://dummyimage.com/170x132.bmp/dddddd/000000"
+}, {
+  "id": "1DZjjSkQxCgWWKZ6VmPz3A4VbzdrskFMbx",
+  "title": "Sweet Jesus, Preacherman",
+  "description": "imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet",
+  "likes": 67,
+  "createDate": "12/21/2019",
+  "isNew": false,
+  "pages": 43,
+  "author": "Winnie Artiss",
+  "img": "http://dummyimage.com/155x225.png/cc0000/ffffff"
+}, {
+  "id": "13YyoFXpy8qJvthht4hjCtTHTShhidBGfu",
+  "title": "Hitting Home",
+  "description": "est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat",
+  "likes": 95,
+  "createDate": "10/8/2019",
+  "isNew": true,
+  "pages": 26,
+  "author": "Caroljean Corryer",
+  "img": "http://dummyimage.com/165x236.png/ff4444/ffffff"
+}, {
+  "id": "1erV1doSCZNGULavZ3RASrxJNwLUSKLuC",
+  "title": "Prince of the City",
+  "description": "ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis",
+  "likes": 66,
+  "createDate": "2/2/2020",
+  "isNew": false,
+  "pages": 49,
+  "author": "Malorie Fedder",
+  "img": "http://dummyimage.com/112x237.bmp/ff4444/ffffff"
+}, {
+  "id": "17xHgsdT95gt8UgDZMGJ5nqobZxhA9qtu4",
+  "title": "Beyond Bedlam",
+  "description": "suspendisse potenti in eleifend quam a odio in hac habitasse",
+  "likes": 63,
+  "createDate": "6/25/2020",
+  "isNew": true,
+  "pages": 44,
+  "author": "Colet Kingsbury",
+  "img": "http://dummyimage.com/207x224.jpg/cc0000/ffffff"
+}, {
+  "id": "1239eRkr7vQFDwCDpWUyYussgSPjCxgbqA",
+  "title": "Filming 'Othello'",
+  "description": "porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac",
+  "likes": 30,
+  "createDate": "1/5/2020",
+  "isNew": true,
+  "pages": 99,
+  "author": "Piper Northover",
+  "img": "http://dummyimage.com/114x198.jpg/5fa2dd/ffffff"
+}, {
+  "id": "13MPSKJLs3wfcCrmaYzBnEEtVAubaZnicE",
+  "title": "Two Drifters (Odete)",
+  "description": "justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum",
+  "likes": 36,
+  "createDate": "11/2/2019",
+  "isNew": false,
+  "pages": 67,
+  "author": "Merry Stirley",
+  "img": "http://dummyimage.com/136x221.jpg/5fa2dd/ffffff"
+}, {
+  "id": "14gLso4wPYpnTuNaCRweH6j4YPpKFu8QnS",
+  "title": "Corruptor, The",
+  "description": "rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo",
+  "likes": 21,
+  "createDate": "6/11/2020",
+  "isNew": true,
+  "pages": 91,
+  "author": "Marmaduke MacLaig",
+  "img": "http://dummyimage.com/247x138.png/5fa2dd/ffffff"
+}, {
+  "id": "1CJNp6RBorbcNezUemkYSaWgZkKp8XZtHw",
+  "title": "Magic in the Water",
+  "description": "felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui",
+  "likes": 23,
+  "createDate": "7/19/2020",
+  "isNew": true,
+  "pages": 82,
+  "author": "Berne Redmore",
+  "img": "http://dummyimage.com/167x238.jpg/cc0000/ffffff"
+}, {
+  "id": "1M8PwcnKJhFKLvZjxhcXuJ787BurAD53wm",
+  "title": "Psycho Beach Party",
+  "description": "odio donec vitae nisi nam ultrices libero non mattis pulvinar",
+  "likes": 32,
+  "createDate": "9/24/2020",
+  "isNew": true,
+  "pages": 24,
+  "author": "Harbert Eliaz",
+  "img": "http://dummyimage.com/185x207.bmp/ff4444/ffffff"
+}, {
+  "id": "1CqCwuttPEVnkub2M6SV77g8D9frKrKXGG",
+  "title": "Zombie Holocaust (a.k.a. Doctor Butcher M.D.) (Zombi Holocaust)",
+  "description": "dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien",
+  "likes": 2,
+  "createDate": "2/25/2020",
+  "isNew": true,
+  "pages": 94,
+  "author": "Brand Ellingworth",
+  "img": "http://dummyimage.com/193x177.bmp/cc0000/ffffff"
+}, {
+  "id": "1MB8ZkZv3f75r7ARDT3RpMLbZySXKNe9w3",
+  "title": "Pitkä kuuma kesä",
+  "description": "in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis",
+  "likes": 47,
+  "createDate": "12/29/2019",
+  "isNew": false,
+  "pages": 17,
+  "author": "Giffer Gres",
+  "img": "http://dummyimage.com/226x175.jpg/ff4444/ffffff"
+}, {
+  "id": "16ShvoDwzia4Gus1nmsi9A1jtMCfBytuvr",
+  "title": "United",
+  "description": "ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo",
+  "likes": 81,
+  "createDate": "8/12/2020",
+  "isNew": false,
+  "pages": 22,
+  "author": "Kelley Parrot",
+  "img": "http://dummyimage.com/141x111.png/cc0000/ffffff"
+}, {
+  "id": "1PyYGef98uB4ir4oZGtyQKujbAM9VQa3vc",
+  "title": "Side Out",
+  "description": "volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla",
+  "likes": 28,
+  "createDate": "6/25/2020",
+  "isNew": true,
+  "pages": 85,
+  "author": "Peadar Drawmer",
+  "img": "http://dummyimage.com/241x166.bmp/dddddd/000000"
+}, {
+  "id": "19S1SpHGzWn3aqt96KV3VxZ9s2n61Qp45r",
+  "title": "Diary of a Shinjuku Thief (Shinjuku dorobo nikki)",
+  "description": "turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus",
+  "likes": 60,
+  "createDate": "12/26/2019",
+  "isNew": true,
+  "pages": 94,
+  "author": "Ofella Allday",
+  "img": "http://dummyimage.com/185x234.bmp/5fa2dd/ffffff"
+}, {
+  "id": "1K3eE7egFfZaqbjmbgsct3eHBjCsXhmYfc",
+  "title": "Blind Swordsman: Zatoichi, The (Zatôichi)",
+  "description": "vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id",
+  "likes": 76,
+  "createDate": "3/2/2020",
+  "isNew": false,
+  "pages": 31,
+  "author": "Cherice Ching",
+  "img": "http://dummyimage.com/122x196.png/ff4444/ffffff"
+}, {
+  "id": "1M4VTs4Ae7Nhb9tMWJUy41isrdBxMDecP4",
+  "title": "Bestiaire",
+  "description": "est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis",
+  "likes": 38,
+  "createDate": "7/6/2020",
+  "isNew": false,
+  "pages": 11,
+  "author": "Aggi Reary",
+  "img": "http://dummyimage.com/166x157.jpg/dddddd/000000"
+}, {
+  "id": "1BWDHbWxHLaNfJxntaw2zeB4FD5ydi41Ju",
+  "title": "Slave of Love, A (Raba lyubvi)",
+  "description": "adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing",
+  "likes": 87,
+  "createDate": "6/30/2020",
+  "isNew": true,
+  "pages": 20,
+  "author": "Marcy Noon",
+  "img": "http://dummyimage.com/132x230.png/dddddd/000000"
+}, {
+  "id": "1B2QDhfqP2U1pVT8U2vhwkL4TsiWrKkFbp",
+  "title": "Too Much Sleep",
+  "description": "nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in",
+  "likes": 35,
+  "createDate": "10/15/2019",
+  "isNew": true,
+  "pages": 68,
+  "author": "Bessy Vaskov",
+  "img": "http://dummyimage.com/248x195.jpg/cc0000/ffffff"
+}, {
+  "id": "1KrSCvB2U7DykPdLA8ama17Ud8QEiDuvnN",
+  "title": "Scrooged",
+  "description": "eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum",
+  "likes": 96,
+  "createDate": "10/17/2019",
+  "isNew": false,
+  "pages": 35,
+  "author": "Giustino McLachlan",
+  "img": "http://dummyimage.com/112x157.jpg/dddddd/000000"
+}, {
+  "id": "1HVrtovCPS4LMFegSSgx4nmZ2EeWCyHXdv",
+  "title": "Schtonk!",
+  "description": "vitae nisi nam ultrices libero non mattis pulvinar nulla pede",
+  "likes": 61,
+  "createDate": "7/6/2020",
+  "isNew": false,
+  "pages": 17,
+  "author": "Raul Vasilyev",
+  "img": "http://dummyimage.com/142x156.jpg/cc0000/ffffff"
+}, {
+  "id": "13wwnYMN7DhwRYb7mcQZvtY1txmCt6wvG8",
+  "title": "Local Hero",
+  "description": "ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit",
+  "likes": 26,
+  "createDate": "4/14/2020",
+  "isNew": false,
+  "pages": 78,
+  "author": "Angelle Durgan",
+  "img": "http://dummyimage.com/219x221.bmp/5fa2dd/ffffff"
+}, {
+  "id": "1EPkCdRHWHQGnSAbHxmUNuaTs4tiU1DXQg",
+  "title": "Mimic",
+  "description": "pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin",
+  "likes": 51,
+  "createDate": "1/11/2020",
+  "isNew": true,
+  "pages": 92,
+  "author": "Bail Switland",
+  "img": "http://dummyimage.com/174x132.jpg/cc0000/ffffff"
+}, {
+  "id": "13NLYSm9YnJVATtQu9XXB8N8EB57R9QBKA",
+  "title": "Tigerland",
+  "description": "cursus vestibulum proin eu mi nulla ac enim in tempor turpis",
+  "likes": 13,
+  "createDate": "5/12/2020",
+  "isNew": false,
+  "pages": 85,
+  "author": "Nicky Pagden",
+  "img": "http://dummyimage.com/147x234.jpg/dddddd/000000"
+}, {
+  "id": "1LiNBaZ8GJTNoukMYWNYjnmJyFy2XPk9PP",
+  "title": "Oasis",
+  "description": "eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus",
+  "likes": 27,
+  "createDate": "10/6/2019",
+  "isNew": false,
+  "pages": 34,
+  "author": "Carin McGaw",
+  "img": "http://dummyimage.com/102x213.png/cc0000/ffffff"
+}, {
+  "id": "1AgATJjTG1rt4ATHstgrWJL2ZTeK6EQFpn",
+  "title": "Curly Top",
+  "description": "erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi",
+  "likes": 46,
+  "createDate": "12/6/2019",
+  "isNew": false,
+  "pages": 3,
+  "author": "Annamaria Millyard",
+  "img": "http://dummyimage.com/140x187.png/cc0000/ffffff"
+}, {
+  "id": "1Ky9Uc7Dem8F1dNr3KRvYw7ogjSBwhMTzj",
+  "title": "Mister Magoo's Christmas Carol",
+  "description": "nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta",
+  "likes": 87,
+  "createDate": "12/13/2019",
+  "isNew": false,
+  "pages": 39,
+  "author": "Karmen Kebbell",
+  "img": "http://dummyimage.com/204x195.jpg/cc0000/ffffff"
+}, {
+  "id": "1KBQrPWJNAddbLnEU5geW65q15PxF9AydJ",
+  "title": "Into the Deep",
+  "description": "vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae",
+  "likes": 98,
+  "createDate": "2/20/2020",
+  "isNew": false,
+  "pages": 52,
+  "author": "Caz Grinval",
+  "img": "http://dummyimage.com/111x250.png/ff4444/ffffff"
+}, {
+  "id": "191ZJutxZMnwZGzwmLRa3sAbc6o5sZWE9a",
+  "title": "The Tenant of Wildfell Hall",
+  "description": "euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis",
+  "likes": 47,
+  "createDate": "3/15/2020",
+  "isNew": true,
+  "pages": 97,
+  "author": "Lauree Lazenbury",
+  "img": "http://dummyimage.com/187x204.bmp/ff4444/ffffff"
+}, {
+  "id": "1HVA2tiVPTgwXbbq32am5igF8BZZrR9ibH",
+  "title": "Bewitched",
+  "description": "cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque",
+  "likes": 81,
+  "createDate": "1/13/2020",
+  "isNew": false,
+  "pages": 76,
+  "author": "Hali Peris",
+  "img": "http://dummyimage.com/158x224.bmp/ff4444/ffffff"
+}, {
+  "id": "1MdEWgUkGXN9BtKabCuGorX71hU4uXKqAQ",
+  "title": "Angel",
+  "description": "mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo",
+  "likes": 63,
+  "createDate": "4/16/2020",
+  "isNew": true,
+  "pages": 66,
+  "author": "Donnie Brimfield",
+  "img": "http://dummyimage.com/219x156.png/dddddd/000000"
+}, {
+  "id": "19vjtCsRzVVxUjWDKGjsjPC5ZaZQrY8Nsb",
+  "title": "Osaka Elegy (Naniwa erejî)",
+  "description": "lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu",
+  "likes": 93,
+  "createDate": "12/8/2019",
+  "isNew": false,
+  "pages": 48,
+  "author": "Morton Adshed",
+  "img": "http://dummyimage.com/147x114.jpg/5fa2dd/ffffff"
+}, {
+  "id": "1Q9AAK744JKyipugWAgGuZeyVEmu4WPyqK",
+  "title": "Who's the Man?",
+  "description": "tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas",
+  "likes": 58,
+  "createDate": "12/29/2019",
+  "isNew": true,
+  "pages": 78,
+  "author": "Jamesy Bunstone",
+  "img": "http://dummyimage.com/239x125.jpg/5fa2dd/ffffff"
+}, {
+  "id": "13waWDpUgA16QEAVqFGmSZZWeoVmAexxMY",
+  "title": "Gods of the Plague (Götter der Pest)",
+  "description": "eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget",
+  "likes": 30,
+  "createDate": "12/3/2019",
+  "isNew": true,
+  "pages": 93,
+  "author": "Sabina Parrin",
+  "img": "http://dummyimage.com/111x169.bmp/cc0000/ffffff"
+}, {
+  "id": "19bj7pQfDCQQhbtemrt4oA2vTLUtqQuP5K",
+  "title": "No Blood Relation (Stepchild, The) (Nasanunaka)",
+  "description": "cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras",
+  "likes": 78,
+  "createDate": "8/2/2020",
+  "isNew": true,
+  "pages": 70,
+  "author": "Jillayne Patrick",
+  "img": "http://dummyimage.com/111x107.jpg/ff4444/ffffff"
+}, {
+  "id": "12ka81LswPPaKNdF2wgudeTLcBHZLWDXvv",
+  "title": "Jönssonligan spelar högt",
+  "description": "arcu libero rutrum ac lobortis vel dapibus at diam nam tristique tortor eu",
+  "likes": 51,
+  "createDate": "3/19/2020",
+  "isNew": false,
+  "pages": 25,
+  "author": "Burk Maharry",
+  "img": "http://dummyimage.com/171x219.jpg/ff4444/ffffff"
+}, {
+  "id": "1LtTg6MQy9tZRZHJGfrHe42kVayvzq5Jza",
+  "title": "After...",
+  "description": "duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla",
+  "likes": 12,
+  "createDate": "10/13/2019",
+  "isNew": true,
+  "pages": 85,
+  "author": "Budd Camamile",
+  "img": "http://dummyimage.com/162x201.jpg/cc0000/ffffff"
+}, {
+  "id": "13xoQNE57e9RQnR8HKPqkR3RmNswcKdKWh",
+  "title": "Dragon Ball Z: Bardock - The Father of Goku (Doragon bôru Z: Tatta hitori no saishuu kessen - Furiiza ni itonda Z senshi Kakarotto no chichi)",
+  "description": "lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus",
+  "likes": 69,
+  "createDate": "6/6/2020",
+  "isNew": true,
+  "pages": 28,
+  "author": "Vi Gibbieson",
+  "img": "http://dummyimage.com/143x127.jpg/cc0000/ffffff"
+}, {
+  "id": "1BPu3sJ9VNPdKCnm72bzr5EWeji68vuE4V",
+  "title": "Julie",
+  "description": "bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus",
+  "likes": 11,
+  "createDate": "2/20/2020",
+  "isNew": true,
+  "pages": 99,
+  "author": "Hayden Kimbrey",
+  "img": "http://dummyimage.com/116x103.png/5fa2dd/ffffff"
+}, {
+  "id": "1PkyGi4UAKnmecpk8x9ZcS1Dew5iCyvxn8",
+  "title": "Student Prince in Old Heidelberg, The",
+  "description": "donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim",
+  "likes": 52,
+  "createDate": "12/16/2019",
+  "isNew": true,
+  "pages": 34,
+  "author": "Magdalene Seelbach",
+  "img": "http://dummyimage.com/167x115.jpg/ff4444/ffffff"
+}, {
+  "id": "12GCEzPm2eRpBbN6TBcSZp5ud4Bw4TgkYm",
+  "title": "Five, The (Gonin)",
+  "description": "suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut",
+  "likes": 53,
+  "createDate": "8/2/2020",
+  "isNew": false,
+  "pages": 31,
+  "author": "Humbert Froment",
+  "img": "http://dummyimage.com/215x194.jpg/5fa2dd/ffffff"
+}, {
+  "id": "1JZSDPLJtdVHoeVAvNphwrVw3jy7WiBGVt",
+  "title": "Regular Lovers (Amants réguliers, Les)",
+  "description": "convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
+  "likes": 88,
+  "createDate": "12/21/2019",
+  "isNew": false,
+  "pages": 84,
+  "author": "Neils Dartan",
+  "img": "http://dummyimage.com/214x211.bmp/cc0000/ffffff"
+}, {
+  "id": "16Ui1Xzwa8jzSJ7gnLK6FXHAuxzjqwVHmF",
+  "title": "Body, The",
+  "description": "vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum",
+  "likes": 8,
+  "createDate": "6/23/2020",
+  "isNew": true,
+  "pages": 49,
+  "author": "Deni Schoular",
+  "img": "http://dummyimage.com/130x206.jpg/cc0000/ffffff"
+}, {
+  "id": "1MQzVRjLnKi7LFPNwVhDUWR6JJn6jNHamy",
+  "title": "Mr. Nobody",
+  "description": "sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
+  "likes": 47,
+  "createDate": "8/11/2020",
+  "isNew": false,
+  "pages": 95,
+  "author": "Tasha Spurden",
+  "img": "http://dummyimage.com/126x168.jpg/5fa2dd/ffffff"
+}, {
+  "id": "1MBtpGoPLwgYoeXo3WvU3PXdLLTc3ndexT",
+  "title": "F/X2 (a.k.a. F/X 2 - The Deadly Art of Illusion)",
+  "description": "et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat",
+  "likes": 33,
+  "createDate": "10/6/2019",
+  "isNew": false,
+  "pages": 89,
+  "author": "Taylor Norster",
+  "img": "http://dummyimage.com/104x192.jpg/dddddd/000000"
+}, {
+  "id": "1Ps794VKZT7b4bdx1x9pqMMF4Vx6Kev8Nj",
+  "title": "Shinobi: Heart Under Blade",
+  "description": "mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris",
+  "likes": 8,
+  "createDate": "2/10/2020",
+  "isNew": false,
+  "pages": 90,
+  "author": "Gabby Applegate",
+  "img": "http://dummyimage.com/171x220.bmp/5fa2dd/ffffff"
+}, {
+  "id": "1Fte6Lg3VmrVqsDgY1jTS4LGLXkEBF8TPX",
+  "title": "Bye Bye Birdie",
+  "description": "proin eu mi nulla ac enim in tempor turpis nec",
+  "likes": 53,
+  "createDate": "11/16/2019",
+  "isNew": true,
+  "pages": 11,
+  "author": "Aubree Keelin",
+  "img": "http://dummyimage.com/159x105.bmp/cc0000/ffffff"
+}, {
+  "id": "19StEnMv2giqE7aEzvkSpdNPT4H2AUrJ5K",
+  "title": "Study in Scarlet, A",
+  "description": "lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst",
+  "likes": 34,
+  "createDate": "2/23/2020",
+  "isNew": true,
+  "pages": 44,
+  "author": "Hillier Coulbeck",
+  "img": "http://dummyimage.com/112x122.jpg/5fa2dd/ffffff"
+}, {
+  "id": "1L6JD3AedtHvfX8c9RAtqbvhdEEewzgfWs",
+  "title": "Locked Out (Enfermés dehors)",
+  "description": "primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse",
+  "likes": 28,
+  "createDate": "9/4/2020",
+  "isNew": false,
+  "pages": 5,
+  "author": "Lil Gergely",
+  "img": "http://dummyimage.com/200x105.bmp/5fa2dd/ffffff"
+}, {
+  "id": "1GcvJeUgzozhqgu5qv3ZCqwtwuZLn23pY1",
+  "title": "Woman Under the Influence, A",
+  "description": "et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse",
+  "likes": 53,
+  "createDate": "2/28/2020",
+  "isNew": false,
+  "pages": 46,
+  "author": "Preston Glasbey",
+  "img": "http://dummyimage.com/180x183.bmp/5fa2dd/ffffff"
+}, {
+  "id": "1AYXG5PgDZTuQc6tWMrpe54cfsoSPAKrHB",
+  "title": "Rush",
+  "description": "auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut",
+  "likes": 78,
+  "createDate": "9/12/2020",
+  "isNew": false,
+  "pages": 93,
+  "author": "Gabrila Meach",
+  "img": "http://dummyimage.com/154x103.png/cc0000/ffffff"
+}, {
+  "id": "1QJ1KfXNBNuZUaoUgem1zyno1iqikjG1be",
+  "title": "So Big!",
+  "description": "nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam",
+  "likes": 83,
+  "createDate": "12/11/2019",
+  "isNew": false,
+  "pages": 28,
+  "author": "Jermaine Evanson",
+  "img": "http://dummyimage.com/117x241.png/dddddd/000000"
+}, {
+  "id": "1GNWWHU2rLE1jex1qJimsF6uBvTF51MHMX",
+  "title": "Butterflies Are Free",
+  "description": "et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat",
+  "likes": 18,
+  "createDate": "6/15/2020",
+  "isNew": false,
+  "pages": 36,
+  "author": "Reagen Phibb",
+  "img": "http://dummyimage.com/207x243.bmp/cc0000/ffffff"
+}, {
+  "id": "1NP2ci22Y82mTYcxo7L2yRSA3P8qXhKcH4",
+  "title": "Piñero",
+  "description": "dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut",
+  "likes": 83,
+  "createDate": "3/31/2020",
+  "isNew": false,
+  "pages": 24,
+  "author": "Farly Physick",
+  "img": "http://dummyimage.com/154x182.png/5fa2dd/ffffff"
+}, {
+  "id": "1BmeAdWe523c16TQe3JcoFgN6FngQvyfzw",
+  "title": "King of Thorn (King of Thorns) (Ibara no O)",
+  "description": "porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac",
+  "likes": 74,
+  "createDate": "5/4/2020",
+  "isNew": false,
+  "pages": 90,
+  "author": "Hughie Kenright",
+  "img": "http://dummyimage.com/117x176.jpg/cc0000/ffffff"
+}, {
+  "id": "1J4s5evwpZg3SuCc6CWJtcg2VFFykvH2o7",
+  "title": "Assassination on the Tiber",
+  "description": "vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec",
+  "likes": 57,
+  "createDate": "6/10/2020",
+  "isNew": false,
+  "pages": 69,
+  "author": "Evania Glowacki",
+  "img": "http://dummyimage.com/202x147.bmp/ff4444/ffffff"
+}, {
+  "id": "1HQ7YHaepRm5MmLBUSMKiTaLcvtato8of9",
+  "title": "Bonneville",
+  "description": "lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa",
+  "likes": 12,
+  "createDate": "10/7/2019",
+  "isNew": false,
+  "pages": 18,
+  "author": "Irene Cottesford",
+  "img": "http://dummyimage.com/145x126.jpg/ff4444/ffffff"
+}, {
+  "id": "1NDjHDLK8pTKvZgLNSRSo2BhJAUfyvv6jx",
+  "title": "Wedlock",
+  "description": "pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere",
+  "likes": 73,
+  "createDate": "8/2/2020",
+  "isNew": false,
+  "pages": 35,
+  "author": "Homere Bortolozzi",
+  "img": "http://dummyimage.com/172x153.jpg/dddddd/000000"
+}, {
+  "id": "12qvSZ4uE1ff3MkP5FinNvqjMqJbFGxWQP",
+  "title": "Dresser, The",
+  "description": "felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc",
+  "likes": 51,
+  "createDate": "3/28/2020",
+  "isNew": true,
+  "pages": 44,
+  "author": "Freedman Gooble",
+  "img": "http://dummyimage.com/102x145.jpg/5fa2dd/ffffff"
+}]

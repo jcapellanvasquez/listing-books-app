@@ -5,6 +5,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import {RouterModule} from '@angular/router';
 import {ButtonModule} from 'primeng/button';
+import {HttpClientModule} from '@angular/common/http';
+import {DataService} from './data.service';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import {ButtonModule} from 'primeng/button';
     InputTextModule,
     RouterModule,
     ButtonModule,
+    HttpClientModule
   ],
   exports: [
     InputTextModule,
     NavbarComponent,
     FooterComponent
-  ]
+  ],
+  providers: [DataService]
 })
 export class AppSharedModule {
 }

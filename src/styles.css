@@ -34,6 +34,7 @@ a:link {
 .primary-color {
   background-color: #FFA45C !important;
 }
+
 .secondary-color {
   background-color: #5D5D5A !important;
 }
@@ -44,3 +45,12 @@ a:link {
   border: 1px solid #FFA45C !important;
 }
 
+:root {
+  --primary-color: #FFA45C !important;
+  --text-color: #5D5D5A !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: #ffffff;
+  background-color: var(--primary-color);
+}
