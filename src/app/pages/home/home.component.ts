@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {SelectItem} from 'primeng/api';
+import {LazyLoadEvent, SelectItem} from 'primeng/api';
 import {DataService} from '../../app-shared/data.service';
 import {Observable} from 'rxjs';
 import {Book} from '../../models/book';
@@ -12,6 +12,8 @@ import {Book} from '../../models/book';
 export class HomeComponent implements OnInit {
   public filterOptions: SelectItem[];
   public books$: Observable<Book[]>;
+  public books: Book[] = [];
+  public rows: Book[] = [];
 
   constructor(private data: DataService) {
     this.filterOptions = [
@@ -23,7 +25,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.books$ = this.data.getBooks();
+    this.books$ = this.data.getBooks()
+  }
+
+  lazyLoad(event: LazyLoadEvent) {
+    setTimeout(() => {
+      let loaded = this.books.slice(event.first, (event.first + event.rows));
+      this.rows = [...loaded];
+    }, 1000);
   }
 
 }

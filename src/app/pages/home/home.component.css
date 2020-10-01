@@ -4,3 +4,8 @@
   min-height: 300px;
   background-repeat: no-repeat;
 }
+
+
+::-webkit-scrollbar {
+  display: none;
+}

@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
-import {InputTextModule} from 'primeng/inputtext';
-import {DropdownModule} from 'primeng/dropdown';
-import {CardModule} from 'primeng/card';
+import {AppSharedModule} from '../app-shared/app-shared.module';
 
 
 @NgModule({
@@ -13,9 +11,7 @@ import {CardModule} from 'primeng/card';
     imports: [
         CommonModule,
         PagesRoutingModule,
-        InputTextModule,
-        DropdownModule,
-        CardModule
+        AppSharedModule
     ],
 })
 export class PagesModule { }

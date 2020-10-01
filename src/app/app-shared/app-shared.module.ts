@@ -7,6 +7,11 @@ import {RouterModule} from '@angular/router';
 import {ButtonModule} from 'primeng/button';
 import {HttpClientModule} from '@angular/common/http';
 import {DataService} from './data.service';
+import {RippleModule} from 'primeng/ripple';
+import {DataViewModule} from 'primeng/dataview';
+import {DropdownModule} from 'primeng/dropdown';
+import {CardModule} from 'primeng/card';
+import {VirtualScrollerModule} from 'primeng/virtualscroller';
 
 
 @NgModule({
@@ -16,12 +21,23 @@ import {DataService} from './data.service';
     InputTextModule,
     RouterModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    RippleModule,
+    InputTextModule,
+    DropdownModule,
+    CardModule,
+    VirtualScrollerModule
   ],
   exports: [
     InputTextModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RippleModule,
+    DataViewModule,
+    InputTextModule,
+    DropdownModule,
+    CardModule,
+    VirtualScrollerModule
   ],
   providers: [DataService]
 })

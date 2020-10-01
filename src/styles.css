@@ -54,3 +54,15 @@ a:link {
   color: #ffffff;
   background-color: var(--primary-color);
 }
+
+.badged-new {
+  padding: 0.3rem 0.5rem;
+  background-color: var(--primary-color);
+  font-size: 0.7rem;
+  color: white;
+  border-radius: 1.4rem;
+  position: absolute;
+  margin-top: .6rem;
+  margin-left: .6rem;
+}
+
