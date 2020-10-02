@@ -11,30 +11,30 @@
     </form>
   </div>
   <div class="p-col-12">
-    <cdk-virtual-scroll-viewport  style="width: 100%; height: 200vh; overflow-x: hidden;" itemSize="90">
-      <div class="p-grid">
-          <div *cdkVirtualFor="let book of (this.books$ | async)" class="p-col-12 p-md-4 animate__animated animate__fadeIn"  style="animation-delay: 200ms">
-            <p-card
-              styleClass="p-card-shadow p-m-3"
-            >
-              <p-header>
-                <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
-                <img alt="Card" [src]="book.img" style="width: 100%; height: 400px;">
-              </p-header>
-              <h3 class="p-my-1 p-text-light p-text-truncate">
-                {{book.title}}
-              </h3>
-              <p>
-                {{book.description}}
-              </p>
-              <p>
-                ❤ {{book.likes | number}}
-              </p>
-            </p-card>
-          </div>
+    <cdk-virtual-scroll-viewport class="viewport" itemSize="90">
+      <div class="p-grid p-grid p-jc-between">
+        <div *cdkVirtualFor="let book of (this.books$ | async)" class="p-sm-12 p-md-4 p-lg-3 p-xl-3 animate__animated animate__fadeIn"
+             style="animation-delay: 200ms">
+          <p-card
+            styleClass="p-card-shadow p-m-3"
+          >
+            <p-header>
+              <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
+              <img alt="Card" [src]="book.img" class="card-img">
+            </p-header>
+            <h3 class="p-my-1 p-text-light p-text-truncate">
+              {{book.title}}
+            </h3>
+            <p>
+              {{book.description}}
+            </p>
+            <p>
+              ❤ {{book.likes | number}}
+            </p>
+          </p-card>
+        </div>
 
       </div>
     </cdk-virtual-scroll-viewport>
-
   </div>
 </div>
