@@ -36,7 +36,7 @@ a:link {
 }
 
 .secondary-color {
-  background-color: #5D5D5A !important;
+  color: #5D5D5A !important;
 }
 
 .custom-primary-button {
@@ -65,4 +65,3 @@ a:link {
   margin-top: .6rem;
   margin-left: .6rem;
 }
-

@@ -13,7 +13,8 @@
   <div class="p-col-12">
     <cdk-virtual-scroll-viewport class="viewport" itemSize="90">
       <div class="p-grid p-grid p-jc-between">
-        <div *cdkVirtualFor="let book of (this.books$ | async)" class="p-sm-12 p-md-4 p-lg-3 p-xl-3 animate__animated animate__fadeIn"
+        <div *cdkVirtualFor="let book of (this.books$ | async)"
+             class="p-sm-12 p-md-4 p-lg-3 p-xl-3 animate__animated animate__fadeIn"
              style="animation-delay: 200ms">
           <p-card
             styleClass="p-card-shadow p-m-3"

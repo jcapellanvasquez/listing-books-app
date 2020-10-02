@@ -12,6 +12,9 @@ import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/dropdown';
 import {CardModule} from 'primeng/card';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {FileUploadModule} from 'primeng/fileupload';
+import {MessageModule} from 'primeng/message';
+import {MessagesModule} from 'primeng/messages';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
     InputTextModule,
     DropdownModule,
     CardModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    FileUploadModule,
+    MessageModule,
+    MessagesModule,
   ],
   exports: [
     InputTextModule,
@@ -37,7 +43,10 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
     InputTextModule,
     DropdownModule,
     CardModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    FileUploadModule,
+    MessageModule,
+    MessagesModule,
   ],
   providers: [DataService]
 })
