@@ -47,6 +47,7 @@ a:link {
 
 :root {
   --primary-color: #FFA45C !important;
+  --secondary-color: #5D5D5A !important;
   --text-color: #5D5D5A !important;
 }
 
@@ -64,4 +65,32 @@ a:link {
   position: absolute;
   margin-top: .6rem;
   margin-left: .6rem;
+}
+
+.p-fileupload-buttonbar {
+  background-color: transparent !important;
+  border: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.p-fileupload-buttonbar .p-button {
+  background-color: white !important;
+  color: var(--secondary-color) !important;
+  font-size: .7rem !important;
+  margin-right: 0 !important;
+  border: 1px solid white !important;
+}
+
+.p-fileupload-buttonbar .p-button .pi {
+  font-size: .7rem !important;
+}
+
+.p-fileupload-row div button.p-button {
+  background-color: white !important;
+  color: var(--secondary-color) !important;
+  border: 1px solid white !important;
 }

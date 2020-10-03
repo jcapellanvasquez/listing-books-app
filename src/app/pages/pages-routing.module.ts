@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {FormBookComponent} from './form-book/form-book.component';
+import {SingleViewComponent} from './single-view/single-view.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'new',
     component: FormBookComponent
+  },
+  {
+    path: 'book/:id',
+    component: SingleViewComponent
   }
 ];
 
