@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {from, Observable} from 'rxjs';
 import {Book} from '../models/book';
 import {map} from 'rxjs/operators';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
@@ -12,6 +12,10 @@ export class DataService {
   private booksDB: AngularFireList<Book>;
   constructor(private http: HttpClient, private db: AngularFireDatabase) {
     this.booksDB = this.db.list('books');
+  }
+
+  public addBook(book: Book)  {
+    return this.booksDB.push(book);
   }
 
   public getBooks(): Observable<Book[]> {
