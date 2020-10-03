@@ -3,6 +3,10 @@ import {LazyLoadEvent, SelectItem} from 'primeng/api';
 import {DataService} from '../../app-shared/data.service';
 import {Observable} from 'rxjs';
 import {Book} from '../../models/book';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../store/app-state';
+import {BookActions} from '../../store/actions';
+import {getBooks} from '../../store/selectors';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +19,7 @@ export class HomeComponent implements OnInit {
   public books: Book[] = [];
   public rows: Book[] = [];
 
-  constructor(private data: DataService) {
+  constructor(private data: DataService, private store: Store<AppState>) {
     this.filterOptions = [
       {label: 'Más recientes', value: 1},
       {label: 'Menos recientes', value: 2},
@@ -25,7 +29,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.books$ = this.data.getBooks()
+    this.store.dispatch(BookActions.loadBooksAction());
+    this.books$ = this.store.select(getBooks);
   }
 
   lazyLoad(event: LazyLoadEvent) {

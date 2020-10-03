@@ -7,6 +7,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppSharedModule} from './app-shared/app-shared.module';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CommonModule} from '@angular/common';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {EffectsModule} from '@ngrx/effects';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,8 +22,13 @@ import {CommonModule} from '@angular/common';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument(),
     AppSharedModule,
     ScrollingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

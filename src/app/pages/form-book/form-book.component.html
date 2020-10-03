@@ -1,12 +1,16 @@
-<div class="p-component p-grid p-nogutter p-flex-column p-align-center">
+<div class="container p-component p-grid p-nogutter p-flex-md-column p-align-center p-mb-sm-6 p-mb-lg-0" style="height: 80vh">
   <div class="p-col-12 p-md-4">
-    <h3 class="title p-text-light p-align-center">Agregar un nuevo libro</h3>
+    <h2 class="title p-text-light p-align-center">Agregar un nuevo libro</h2>
   </div>
   <div class="p-col-12 p-md-4">
     <div class="p-fluid secondary-color">
       <div class="p-field">
         <label for="titulo">Título</label>
         <input id="titulo" type="text" pInputText>
+      </div>
+      <div class="p-field">
+        <label for="autor">Autor</label>
+        <input id="autor" type="text" pInputText>
       </div>
       <div class="p-field">
         <label for="sinopsis">Sinopsis</label>
@@ -31,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="p-col-12 p-md-4">
+  <div class="p-col-12 p-md-4 p-mt-5">
     <div class="p-grid" >
       <div class="p-col-6">
         <p-button (click)="goBack()" label="Volver al listado" styleClass="p-button-link secondary-color"></p-button>

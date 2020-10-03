@@ -47,6 +47,7 @@ a:link {
 
 :root {
   --primary-color: #FFA45C !important;
+  --primary-color-highlight: #FFCDAB !important;
   --secondary-color: #5D5D5A !important;
   --text-color: #5D5D5A !important;
 }
@@ -93,4 +94,25 @@ a:link {
   background-color: white !important;
   color: var(--secondary-color) !important;
   border: 1px solid white !important;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem var(--primary-color-highlight);
+  border-color: var(--primary-color) !important;
+}
+.p-inputtext:enabled:hover {
+  border-color: var(--primary-color) !important;
+}
+
+.p-dropdown:not(.p-disabled):hover {
+  border-color: var(--primary-color) !important;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem var(--primary-color-highlight);
+  border-color: var(--primary-color) !important;
 }
