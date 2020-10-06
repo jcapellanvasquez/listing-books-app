@@ -15,6 +15,7 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {FileUploadModule} from 'primeng/fileupload';
 import {MessageModule} from 'primeng/message';
 import {MessagesModule} from 'primeng/messages';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -33,6 +34,8 @@ import {MessagesModule} from 'primeng/messages';
     FileUploadModule,
     MessageModule,
     MessagesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     InputTextModule,
@@ -47,6 +50,8 @@ import {MessagesModule} from 'primeng/messages';
     FileUploadModule,
     MessageModule,
     MessagesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DataService]
 })

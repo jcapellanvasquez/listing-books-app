@@ -1,48 +1,51 @@
-<div class="container p-component p-grid p-nogutter p-flex-md-column p-align-center p-mb-sm-6 p-mb-lg-0" style="height: 80vh">
-  <div class="p-col-12 p-md-4">
-    <h2 class="title p-text-light p-align-center">Agregar un nuevo libro</h2>
-  </div>
-  <div class="p-col-12 p-md-4">
-    <div class="p-fluid secondary-color">
-      <div class="p-field">
-        <label for="titulo">Título</label>
-        <input id="titulo" type="text" pInputText>
+<form (ngSubmit)="save()" [formGroup]="form">
+  <div class="container p-component p-grid p-nogutter p-flex-md-column p-align-center p-mb-sm-6 p-mb-lg-0" style="height: 80vh">
+    <div class="p-col-12 p-md-4">
+      <h2 class="title p-text-light p-align-center">Agregar un nuevo libro</h2>
+    </div>
+    <div class="p-col-12 p-md-4">
+      <div class="p-fluid secondary-color">
+        <div class="p-field">
+          <label for="titulo">Título</label>
+          <input id="titulo" formControlName="title" type="text" pInputText>
+        </div>
+        <div class="p-field">
+          <label for="autor">Autor</label>
+          <input id="autor" formControlName="autor" type="text" pInputText>
+        </div>
+        <div class="p-field">
+          <label for="sinopsis">Sinopsis</label>
+          <textarea id="sinopsis" formControlName="sinopsis" type="text" pInputText></textarea>
+        </div>
+        <div class="p-field">
+          <p-fileUpload
+            name="img"
+            (onUpload)="onUpload($event)"
+            accept="image/*"
+            maxFileSize="1000000"
+            [chooseLabel]="'Cargar imagen'"
+            [chooseIcon]="'pi pi-upload'"
+            [showUploadButton]="false"
+          >
+            <ng-template pTemplate="content">
+              <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+              </ul>
+            </ng-template>
+          </p-fileUpload>
+        </div>
       </div>
-      <div class="p-field">
-        <label for="autor">Autor</label>
-        <input id="autor" type="text" pInputText>
-      </div>
-      <div class="p-field">
-        <label for="sinopsis">Sinopsis</label>
-        <textarea id="sinopsis" type="text" pInputText></textarea>
-      </div>
-      <div class="p-field">
-        <p-fileUpload
-          name="img"
-          (onUpload)="onUpload($event)"
-          accept="image/*"
-          maxFileSize="1000000"
-          [chooseLabel]="'Cargar imagen'"
-          [chooseIcon]="'pi pi-upload'"
-          [showUploadButton]="false"
-        >
-          <ng-template pTemplate="content">
-            <ul *ngIf="uploadedFiles.length">
-              <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-            </ul>
-          </ng-template>
-        </p-fileUpload>
+    </div>
+    <div class="p-col-12 p-md-4 p-mt-5">
+      <div class="p-grid" >
+        <div class="p-col-6">
+          <p-button (click)="goBack()" label="Volver al listado" styleClass="p-button-link secondary-color"></p-button>
+        </div>
+        <div class="p-col-6" style="text-align: right">
+          <button pButton pRipple type="submit" label="Guardar" class="p-button-raised custom-primary-button"></button>
+        </div>
       </div>
     </div>
   </div>
-  <div class="p-col-12 p-md-4 p-mt-5">
-    <div class="p-grid" >
-      <div class="p-col-6">
-        <p-button (click)="goBack()" label="Volver al listado" styleClass="p-button-link secondary-color"></p-button>
-      </div>
-      <div class="p-col-6" style="text-align: right">
-        <button pButton pRipple type="button" label="Guardar" class="p-button-raised custom-primary-button"></button>
-      </div>
-    </div>
-  </div>
-</div>
+
+</form>

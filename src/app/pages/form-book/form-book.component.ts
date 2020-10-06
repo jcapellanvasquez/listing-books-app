@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {MessageService} from 'primeng/api';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AppState} from '../../store/app-state';
+import {Store} from '@ngrx/store';
+import {BookActions} from '../../store/actions';
 
 @Component({
   selector: 'app-form-book',
@@ -9,10 +13,20 @@ import {Router} from '@angular/router';
   providers: [MessageService]
 })
 export class FormBookComponent implements OnInit {
-
+  public form: FormGroup;
   public uploadedFiles: any[] = [];
 
-  constructor(private messageService: MessageService, private router: Router) {
+  constructor(
+    private messageService: MessageService,
+    private router: Router,
+    private fb: FormBuilder,
+    private store: Store<AppState>
+  ) {
+    this.form = this.fb.group({
+      title: ['', Validators.required],
+      autor: [''],
+      sinopsis: ['', Validators.required],
+    });
   }
 
   ngOnInit(): void {
@@ -30,4 +44,10 @@ export class FormBookComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  save() {
+    console.log(this.form)
+    if (this.form.valid) {
+      this.store.dispatch(BookActions.addBookAction({book: this.form.value}));
+    }
+  }
 }
