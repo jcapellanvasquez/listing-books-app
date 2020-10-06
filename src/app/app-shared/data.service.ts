@@ -10,12 +10,14 @@ import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 })
 export class DataService {
   private booksDB: AngularFireList<Book>;
+
   constructor(private http: HttpClient, private db: AngularFireDatabase) {
     this.booksDB = this.db.list('books');
   }
 
-  public addBook(book: Book)  {
-    return this.booksDB.push(book);
+  public addBook(book: Book): Observable<{ successMessage }> {
+    // Coverting Promiso to Observable
+    return from(this.booksDB.push(book)).pipe(map(response => ({successMessage: 'Saved'})));
   }
 
   public getBooks(): Observable<Book[]> {

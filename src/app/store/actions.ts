@@ -14,11 +14,17 @@ export enum BookActionTypes {
 };
 
 export const loadBooksAction = createAction(BookActionTypes.LoadBooks);
-export const loadBooksSucceessAction = createAction(BookActionTypes.LoadBooksSuccess, props<{ books: Book[] }>());
+export const loadBooksSuccessAction = createAction(BookActionTypes.LoadBooksSuccess, props<{ books: Book[] }>());
 export const loadBooksFailureAction = createAction(BookActionTypes.LoadBooksFailure, props<{ errorMessage: string }>());
+export const addBookAction = createAction(BookActionTypes.AddBook, props<{ book: Book }>());
+export const addBookSuccessAction = createAction(BookActionTypes.AddBookSuccess, props<{ successMessage: string }>());
+export const addBookFailureAction = createAction(BookActionTypes.AddBookFailure, props<{ errorMessage: string }>());
 
 export const BookActions = {
   loadBooksAction,
-  loadBooksSucceessAction,
+  loadBooksSuccessAction,
   loadBooksFailureAction,
+  addBookAction,
+  addBookSuccessAction,
+  addBookFailureAction
 };

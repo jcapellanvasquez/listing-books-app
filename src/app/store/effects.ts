@@ -14,9 +14,19 @@ export class BookEffect {
     mergeMap(
       () => this.bookService.getBooks()
         .pipe(
-          map(books => BookActions.loadBooksSucceessAction({books})),
+          map(books => BookActions.loadBooksSuccessAction({books})),
           catchError(() => of(BookActions.loadBooksFailureAction({errorMessage: 'carga fallida'}))),
         )
+    )
+  ));
+
+  addBook$ = createEffect(() => this.actions$.pipe(
+    ofType(BookActionTypes.AddBook),
+    mergeMap(
+      ({book}) => this.bookService.addBook(book).pipe(
+        map(response => BookActions.addBookSuccessAction({successMessage: response.successMessage})),
+        catchError(() => of(BookActions.addBookFailureAction({errorMessage: 'Fallo el salvado'})))
+      )
     )
   ));
 

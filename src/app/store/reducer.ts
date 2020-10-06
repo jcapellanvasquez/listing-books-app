@@ -10,7 +10,10 @@ export const initialAppState: AppState = {
 
 const appReducer = createReducer(
   initialAppState,
-  on(BookActions.loadBooksSucceessAction, (appState,{books}) => ({...appState, books: books}))
+  on(BookActions.loadBooksSuccessAction, (appState,{books}) => ({...appState, books: books})),
+  on(BookActions.loadBooksFailureAction, (appState, {errorMessage})=> ({...appState, errorMessage: errorMessage})),
+  on(BookActions.addBookSuccessAction, (appState, {successMessage})=> ({...appState, successMessage: successMessage})),
+  on(BookActions.addBookFailureAction, (appState, {errorMessage})=> ({...appState, errorMessage: errorMessage})),
 );
 
 export function bookReducer(state: AppState | undefined, action: Action) {
