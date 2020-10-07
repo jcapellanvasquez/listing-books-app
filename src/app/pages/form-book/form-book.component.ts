@@ -49,8 +49,6 @@ export class FormBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.messageService.clear();
-
     this.store.select(getSuccessMessage).subscribe(message => {
       if (message) {
         this.form.reset();
@@ -58,6 +56,7 @@ export class FormBookComponent implements OnInit {
           lang: 'es'
         });
         this.files.clear();
+        this.messageService.clear();
         this.successMessage.detail = message;
         this.messageService.add(this.successMessage);
       }
@@ -65,6 +64,7 @@ export class FormBookComponent implements OnInit {
 
     this.store.select(getFailureMessage).subscribe(message => {
       if (message) {
+        this.messageService.clear();
         this.failureMessage.detail = message;
         this.messageService.add(this.failureMessage);
       }
@@ -85,7 +85,8 @@ export class FormBookComponent implements OnInit {
   save() {
     if (this.form.valid && !this.notImageSelected) {
       let file = this.uploadedFiles[0];
-      let book: Book = {...this.form.value, img: '', imageFile: {file: file, name: file.name}};
+      let createdDate = new Date();
+      let book: Book = {...this.form.value, img: '', imageFile: {file: file, name: file.name}, createdDate: createdDate.toISOString()};
       this.store.dispatch(BookActions.addBookAction({book: book}));
     } else {
       this.title.markAsTouched();

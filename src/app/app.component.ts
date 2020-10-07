@@ -10,11 +10,10 @@ import {Message, MessageService, PrimeNGConfig} from 'primeng/api';
 export class AppComponent implements OnInit {
   title = 'listing-books-app';
 
-  constructor(private primeNGConfig: PrimeNGConfig, public message: MessageService) {
+  constructor(private primeNGConfig: PrimeNGConfig) {
   }
 
   ngOnInit(): void {
     this.primeNGConfig.ripple = true;
-    this.message.add({severity:'info', detail:'Hola'})
   }
 }

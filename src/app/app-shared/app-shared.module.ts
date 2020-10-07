@@ -19,10 +19,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastModule} from 'primeng/toast';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {SelectButtonModule} from 'primeng/selectbutton';
+import { LongStringPipe } from './long-string.pipe';
 
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent],
+  declarations: [NavbarComponent, FooterComponent, LongStringPipe],
   imports: [
     CommonModule,
     InputTextModule,
@@ -60,7 +61,8 @@ import {SelectButtonModule} from 'primeng/selectbutton';
     ReactiveFormsModule,
     ToastModule,
     RadioButtonModule,
-    SelectButtonModule
+    SelectButtonModule,
+    LongStringPipe
   ],
   providers: [DataService]
 })

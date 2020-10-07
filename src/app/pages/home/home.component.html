@@ -10,7 +10,7 @@
       </div>
     </form>
   </div>
-  <div class="p-col-12">
+  <div class="p-col-12 m-top">
     <cdk-virtual-scroll-viewport class="viewport" itemSize="90">
       <div class="p-grid p-grid p-jc-between">
         <div *cdkVirtualFor="let book of (this.books$ | async)"
@@ -26,8 +26,8 @@
             <h3 class="p-my-1 p-text-light p-text-truncate">
               {{book.title}}
             </h3>
-            <p>
-              {{book.synopsis}}
+            <p class="w-100">
+              {{book.synopsis | longString}}
             </p>
             <p>
               ❤ {{book.likes | number}}

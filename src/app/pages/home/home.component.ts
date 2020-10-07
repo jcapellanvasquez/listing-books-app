@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {LazyLoadEvent, SelectItem} from 'primeng/api';
+import {LazyLoadEvent, MessageService, SelectItem} from 'primeng/api';
 import {DataService} from '../../app-shared/data.service';
 import {Observable} from 'rxjs';
 import {Book} from '../../models/book';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../store/app-state';
 import {BookActions} from '../../store/actions';
-import {getBooks} from '../../store/selectors';
+import {getBooks, getFailureMessage, getSuccessMessage} from '../../store/selectors';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   public books: Book[] = [];
   public rows: Book[] = [];
 
-  constructor(private data: DataService, private store: Store<AppState>) {
+  constructor(private data: DataService, private store: Store<AppState>, private messageService: MessageService) {
     this.filterOptions = [
       {label: 'Más recientes', value: 1},
       {label: 'Menos recientes', value: 2},
@@ -31,6 +31,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(BookActions.loadBooksAction());
     this.books$ = this.store.select(getBooks);
+    this.store.select(getFailureMessage).subscribe(error => {
+      if (error) {
+        this.messageService.clear();
+        this.messageService.add({severity: 'error', summary: 'Carga de listado de libros', detail: error, life: 1000});
+      }
+    });
   }
 
   lazyLoad(event: LazyLoadEvent) {
@@ -39,5 +45,4 @@ export class HomeComponent implements OnInit {
       this.rows = [...loaded];
     }, 1000);
   }
-
 }

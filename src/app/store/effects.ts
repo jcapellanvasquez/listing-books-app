@@ -26,7 +26,6 @@ export class BookEffect {
       ({book}) => this.bookService.addBook(book).pipe(
         map(response => BookActions.addBookSuccessAction({successMessage: response.successMessage})),
         catchError((error) => {
-          console.log(error);
           return of(BookActions.addBookFailureAction({failureMessage: 'Fallo el salvado'}));
         })
       )

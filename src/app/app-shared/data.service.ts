@@ -11,6 +11,7 @@ import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/sto
 })
 export class DataService {
   private booksDB: AngularFireList<Book>;
+  private msPerDay: number = 8600000;
 
   constructor(private http: HttpClient, private db: AngularFireDatabase, private storage: AngularFireStorage) {
     this.booksDB = this.db.list<Book>('books');
@@ -28,7 +29,7 @@ export class DataService {
           title: newBook.title,
           author: newBook.author,
           synopsis: newBook.synopsis,
-          createdDate: new Date(),
+          createdDate: newBook.createdDate,
           likes: 0,
           pages: 0,
           id: '',
@@ -50,7 +51,17 @@ export class DataService {
 
   public getBooks(): Observable<Book[]> {
     return this.booksDB.snapshotChanges().pipe(
-      map(changes => changes.map(book => ({id: book.key, ...book.payload.val()})))
+      map(changes => changes.map(book => ({
+        id: book.key, ...book.payload.val(),
+        isNew: this.isNew(new Date(book.payload.val().createdDate))
+      })))
     );
+  }
+
+  private isNew(createdDated: Date): boolean {
+    let currentDate: Date = new Date();
+    let now: number = currentDate.getTime();
+    let days: number = 15;
+    return (now - createdDated.getTime()) < (this.msPerDay * days);
   }
 }
