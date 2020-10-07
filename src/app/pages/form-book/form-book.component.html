@@ -1,43 +1,50 @@
 <form (ngSubmit)="save()" [formGroup]="form">
-  <div class="container p-component p-grid p-nogutter p-flex-md-column p-align-center p-mb-sm-6 p-mb-lg-0" style="height: 80vh">
-    <div class="p-col-12 p-md-4">
+  <div class="container p-component p-grid p-nogutter p-flex-md-column p-align-center p-mb-sm-6 p-mb-lg-0">
+    <div class="p-col-12 p-md-6">
       <h2 class="title p-text-light p-align-center">Agregar un nuevo libro</h2>
     </div>
-    <div class="p-col-12 p-md-4">
+    <div class="p-col-12 p-md-6">
       <div class="p-fluid secondary-color">
         <div class="p-field">
           <label for="titulo">Título</label>
-          <input id="titulo" formControlName="title" type="text" pInputText>
+          <input id="titulo" formControlName="title" type="text" pInputText
+                 [ngClass]="{'p-invalid': this.title.invalid && this.title.touched}" class="p-invalid">
+          <small *ngIf="this.title.invalid && this.title.touched" class="p-invalid">Ingresa el título del libro</small>
         </div>
         <div class="p-field">
-          <label for="autor">Autor</label>
-          <input id="autor" formControlName="autor" type="text" pInputText>
+          <label for="author">Autor</label>
+          <input id="author" formControlName="author" type="text" pInputText>
         </div>
         <div class="p-field">
-          <label for="sinopsis">Sinopsis</label>
-          <textarea id="sinopsis" formControlName="sinopsis" type="text" pInputText></textarea>
+          <label for="synopsis">Sinopsis</label>
+          <textarea id="synopsis" formControlName="synopsis" type="text" pInputText
+                    [ngClass]="{'p-invalid': this.synopsis.invalid && this.synopsis.touched}"></textarea>
+          <small *ngIf="this.synopsis.invalid && this.synopsis.touched" class="p-invalid">Es necesario una breve
+            synopsis del libro</small>
+        </div>
+        <div class="p-field">
+          <label>Idioma</label>
+          <p-selectButton [options]="languages" formControlName="lang"></p-selectButton>
         </div>
         <div class="p-field">
           <p-fileUpload
             name="img"
-            (onUpload)="onUpload($event)"
+            (onSelect)="onUpload($event)"
             accept="image/*"
             maxFileSize="1000000"
             [chooseLabel]="'Cargar imagen'"
+            [cancelLabel]="'Remover imagen'"
             [chooseIcon]="'pi pi-upload'"
             [showUploadButton]="false"
+            #files
           >
-            <ng-template pTemplate="content">
-              <ul *ngIf="uploadedFiles.length">
-                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-              </ul>
-            </ng-template>
           </p-fileUpload>
+          <small *ngIf="this.notImageSelected" class="p-invalid">No haz cargado ninguna imagen.</small>
         </div>
       </div>
     </div>
-    <div class="p-col-12 p-md-4 p-mt-5">
-      <div class="p-grid" >
+    <div class="p-col-12 p-md-6 p-my-6">
+      <div class="p-grid">
         <div class="p-col-6">
           <p-button (click)="goBack()" label="Volver al listado" styleClass="p-button-link secondary-color"></p-button>
         </div>
@@ -47,5 +54,6 @@
       </div>
     </div>
   </div>
-
 </form>
+
+

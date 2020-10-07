@@ -16,6 +16,9 @@ import {FileUploadModule} from 'primeng/fileupload';
 import {MessageModule} from 'primeng/message';
 import {MessagesModule} from 'primeng/messages';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ToastModule} from 'primeng/toast';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {SelectButtonModule} from 'primeng/selectbutton';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MessageModule,
     MessagesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
+    RadioButtonModule,
+    SelectButtonModule
   ],
   exports: [
     InputTextModule,
@@ -51,7 +57,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MessageModule,
     MessagesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
+    RadioButtonModule,
+    SelectButtonModule
   ],
   providers: [DataService]
 })

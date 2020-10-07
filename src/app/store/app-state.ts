@@ -2,7 +2,7 @@ import {Book} from '../models/book';
 
 export interface AppState {
   books: Book[];
-  errorMessage: string;
+  failureMessage: string;
   successMessage: string;
 }
 

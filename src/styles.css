@@ -116,3 +116,19 @@ a:link {
   box-shadow: 0 0 0 0.2rem var(--primary-color-highlight);
   border-color: var(--primary-color) !important;
 }
+
+.p-messages {
+  width: 80%;
+  position: sticky;
+}
+.p-selectbutton .p-button.p-highlight, .p-selectbutton .p-button.p-highlight:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.p-button:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem var(--primary-color-highlight);
+}
