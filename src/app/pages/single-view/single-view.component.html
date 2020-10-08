@@ -1,18 +1,18 @@
 <div *ngIf="book$ | async as book"
-     class="container-wrapper container p-component p-grid p-flex-wrap p-nogutter p-mb-sm-6 p-mb-lg-0 p-jc-center">
-  <div class="p-col-2 title">
+     class="container-wrapper container p-component p-grid p-flex-wrap p-flex-sm-column p-flex-lg-row p-nogutter p-mb-sm-6 p-mb-lg-0 p-jc-center">
+  <div class="p-lg-2 p-md-8 title">
     <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
     <img src="{{book.img}}" class="img-responsive">
   </div>
-  <div class="p-col-4 p-pl-6 secondary-color">
+  <div class="p-lg-4 p-sm-12  secondary-color">
     <h2 class="title p-mb-1">{{book.title | titlecase}}</h2>
     <button pButton
             pRipple
             type="button"
-            label="❤ 9,999.00"
+            label="❤ {{book.likes | number}}"
             class="p-button-rounded p-button-text p-button-plain like-button-padding"
     ></button>
-    <p id="synopsis">
+    <p id="synopsis" class="p-text-justify">
       {{book.synopsis}}
     </p>
     <p class="p-mb-3">
