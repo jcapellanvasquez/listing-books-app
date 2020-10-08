@@ -12,19 +12,20 @@
   </div>
   <div class="p-col-12 m-top">
     <cdk-virtual-scroll-viewport class="viewport" itemSize="90">
-      <div class="p-grid p-grid p-jc-between">
+      <div class="p-grid p-grid">
         <div *cdkVirtualFor="let book of (this.books$ | async)"
-             class="p-sm-12 p-md-4 p-lg-3 p-xl-3 animate__animated animate__fadeIn"
+             class="p-sm-12 p-md-4 p-xl-3 animate__animated animate__fadeIn"
              style="animation-delay: 200ms">
           <p-card
-            styleClass="p-card-shadow p-m-3"
+            styleClass="p-card-shadow p-m-3 pointer"
+            (click)="goToBook(book.id)"
           >
             <p-header>
               <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
               <img alt="Card" [src]="book.img" class="card-img">
             </p-header>
             <h3 class="p-my-1 p-text-light p-text-truncate">
-              {{book.title}}
+              {{book.title | titlecase}}
             </h3>
             <p class="w-100">
               {{book.synopsis | longString}}

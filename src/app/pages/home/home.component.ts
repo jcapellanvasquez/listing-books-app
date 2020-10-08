@@ -7,6 +7,7 @@ import {Store} from '@ngrx/store';
 import {AppState} from '../../store/app-state';
 import {BookActions} from '../../store/actions';
 import {getBooks, getFailureMessage, getSuccessMessage} from '../../store/selectors';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   public books: Book[] = [];
   public rows: Book[] = [];
 
-  constructor(private data: DataService, private store: Store<AppState>, private messageService: MessageService) {
+  constructor(private data: DataService, private store: Store<AppState>, private messageService: MessageService, private router: Router) {
     this.filterOptions = [
       {label: 'Más recientes', value: 1},
       {label: 'Menos recientes', value: 2},
@@ -44,5 +45,9 @@ export class HomeComponent implements OnInit {
       let loaded = this.books.slice(event.first, (event.first + event.rows));
       this.rows = [...loaded];
     }, 1000);
+  }
+
+  public goToBook(id: string) {
+    this.router.navigate(['/book', id])
   }
 }

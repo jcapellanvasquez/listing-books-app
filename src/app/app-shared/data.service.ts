@@ -52,10 +52,15 @@ export class DataService {
   public getBooks(): Observable<Book[]> {
     return this.booksDB.snapshotChanges().pipe(
       map(changes => changes.map(book => ({
-        id: book.key, ...book.payload.val(),
+        ...book.payload.val(),
+        id: book.key,
         isNew: this.isNew(new Date(book.payload.val().createdDate))
       })))
     );
+  }
+
+  public getBook() {
+
   }
 
   private isNew(createdDated: Date): boolean {

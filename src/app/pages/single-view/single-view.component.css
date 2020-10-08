@@ -1,0 +1,12 @@
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+#synopsis {
+  min-height: 200px;
+}
+
+.like-button-padding {
+  margin-left: -17px;
+}
