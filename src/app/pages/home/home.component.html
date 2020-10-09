@@ -1,42 +1,57 @@
-<div class="bg-wave p-grid p-nogutter container">
-  <div class="p-col-12 p-pt-5">
-    <form class="p-formgroup-inline p-jc-between">
-      <div class="p-field">
-        <p-dropdown styleClass="custom-select" [options]="filterOptions" optionLabel="label"
-                    dataKey="value"></p-dropdown>
-      </div>
-      <div class="p-field  p-px-0 p-mx-0 p-text-right">
-        <input pInputText type="text" placeholder="Buscar...">
-      </div>
-    </form>
-  </div>
-  <div class="p-col-12 m-top">
-    <cdk-virtual-scroll-viewport class="viewport" itemSize="90">
-      <div class="p-grid p-grid">
-        <div *cdkVirtualFor="let book of (this.books$ | async)"
-             class="p-sm-12 p-md-4 p-xl-3 animate__animated animate__fadeIn"
-             style="animation-delay: 200ms">
-          <p-card
-            styleClass="p-card-shadow p-m-3 pointer"
-            (click)="goToBook(book.id)"
-          >
-            <p-header>
-              <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
-              <img alt="Card" [src]="book.img" class="card-img">
-            </p-header>
-            <h3 class="p-my-1 p-text-light p-text-truncate">
-              {{book.title | titlecase}}
-            </h3>
-            <p class="w-100">
-              {{book.synopsis | longString}}
-            </p>
-            <p>
-              ❤ {{book.likes | number}}
-            </p>
-          </p-card>
+<div class="container-wrapper">
+  <div class="bg-wave p-grid p-nogutter container">
+    <div class="p-col-12 p-pt-5">
+      <form [formGroup]="form" (ngSubmit)="filter()" class="p-formgroup-inline p-jc-between">
+        <div class="p-field">
+          <p-dropdown formControlName="order"
+                      styleClass="custom-select"
+                      [options]="filterOptions"
+                      optionLabel="label"
+                      (onChange)="sort()"
+                      dataKey="value"></p-dropdown>
         </div>
+        <div class="p-field  p-px-0 p-mx-0 p-text-right">
+          <div class="p-inputgroup p-e">
+            <input formControlName="filter" pInputText type="text" placeholder="Buscar...">
+            <button type="submit" pButton pRipple icon="pi pi-search" class="custom-primary-button"></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="p-col-12 m-top">
+      <cdk-virtual-scroll-viewport *ngIf="(this.books$ | async)?.length > 0 ; else notFound"
+                                   class="viewport"
+                                   itemSize="90">
+        <div class="p-grid p-grid">
+          <div *cdkVirtualFor="let book of (this.books$ | async)"
+               class="p-sm-12 p-md-4 p-xl-3 animate__animated animate__fadeIn"
+               style="animation-delay: 200ms">
+            <p-card
+              styleClass="p-card-shadow p-m-3 pointer"
+              (click)="goToBook(book.id)"
+            >
+              <p-header>
+                <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
+                <img alt="Card" [src]="book.img" class="card-img">
+              </p-header>
+              <h3 class="p-my-1 p-text-light p-text-truncate">
+                {{book.title | titlecase}}
+              </h3>
+              <p class="w-100 p-text-justify">
+                {{book.synopsis | longString}}
+              </p>
+              <p>
+                ❤ {{book.likes | number}}
+              </p>
+            </p-card>
+          </div>
 
-      </div>
-    </cdk-virtual-scroll-viewport>
+        </div>
+      </cdk-virtual-scroll-viewport>
+      <ng-template #notFound>
+        <app-not-found>No encontramos nada, intenta con otros filtros...</app-not-found>
+      </ng-template>
+    </div>
   </div>
+
 </div>

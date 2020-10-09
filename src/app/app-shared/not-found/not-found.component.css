@@ -1,0 +1,15 @@
+.not-found-bg {
+  background-image: url("src/assets/image/not-found.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 53%;
+  background-size: cover;
+  width: 50%;
+  height: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .not-found-bg {
+    display: none;
+  }
+}

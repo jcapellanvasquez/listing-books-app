@@ -12,7 +12,7 @@ import {Observable} from 'rxjs';
   styleUrls: ['./single-view.component.css']
 })
 export class SingleViewComponent implements OnInit {
-  private book$: Observable<Book>;
+  public book$: Observable<Book>;
 
   constructor(private store: Store<AppState>, private activeRoute: ActivatedRoute) {
   }

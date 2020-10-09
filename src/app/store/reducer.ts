@@ -1,11 +1,14 @@
 import {AppState} from './app-state';
 import {Action, createReducer, on} from '@ngrx/store';
 import {BookActions, BookActionTypes} from './actions';
+import {Query} from '../models/query';
 
 export const initialAppState: AppState = {
   books: [],
   failureMessage: '',
-  successMessage: ''
+  successMessage: '',
+  isLoad: false,
+  query: null
 };
 
 const appReducer = createReducer(

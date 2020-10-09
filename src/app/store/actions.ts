@@ -1,5 +1,6 @@
 import {createAction, props} from '@ngrx/store';
 import {Book} from '../models/book';
+import {Query} from '../models/query';
 
 export enum BookActionTypes {
   LoadBooks = '[Book] Load Books',
@@ -13,7 +14,7 @@ export enum BookActionTypes {
   UpdateBookFailure = '[Book] Update Book Failure',
 };
 
-export const loadBooksAction = createAction(BookActionTypes.LoadBooks);
+export const loadBooksAction = createAction(BookActionTypes.LoadBooks, props<{ query: Query }>());
 export const loadBooksSuccessAction = createAction(BookActionTypes.LoadBooksSuccess, props<{ books: Book[] }>());
 export const loadBooksFailureAction = createAction(BookActionTypes.LoadBooksFailure, props<{ failureMessage: string }>());
 export const addBookAction = createAction(BookActionTypes.AddBook, props<{ book: Book }>());

@@ -20,10 +20,11 @@ import {ToastModule} from 'primeng/toast';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import { LongStringPipe } from './long-string.pipe';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent, LongStringPipe],
+  declarations: [NavbarComponent, FooterComponent, LongStringPipe, NotFoundComponent],
   imports: [
     CommonModule,
     InputTextModule,
@@ -62,7 +63,8 @@ import { LongStringPipe } from './long-string.pipe';
     ToastModule,
     RadioButtonModule,
     SelectButtonModule,
-    LongStringPipe
+    LongStringPipe,
+    NotFoundComponent
   ],
   providers: [DataService]
 })

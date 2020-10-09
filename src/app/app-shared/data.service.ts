@@ -3,8 +3,10 @@ import {HttpClient} from '@angular/common/http';
 import {forkJoin, from, Observable, of} from 'rxjs';
 import {Book} from '../models/book';
 import {finalize, map, mergeMap, switchMap, tap} from 'rxjs/operators';
-import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
+import {AngularFireDatabase, AngularFireList, QueryFn} from '@angular/fire/database';
 import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
+import {Query, QueryType} from '../models/query';
+import {redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 
 @Injectable({
   providedIn: 'any'
@@ -49,18 +51,66 @@ export class DataService {
     return this.storage.ref(file);
   }
 
-  public getBooks(): Observable<Book[]> {
-    return this.booksDB.snapshotChanges().pipe(
+  public getBooks(query: Query): Observable<Book[]> {
+    return this.db.list<Book>('books', this.getQuery(query)).snapshotChanges().pipe(
       map(changes => changes.map(book => ({
         ...book.payload.val(),
         id: book.key,
         isNew: this.isNew(new Date(book.payload.val().createdDate))
-      })))
+      }))),
+      map(books => {
+        if (query) {
+          return this.sortBooks(query.field, query.value, books);
+        }
+        return books;
+      }),
+      tap(console.log)
     );
   }
 
-  public getBook() {
+  public getQuery(query: Query): QueryFn {
+    return ref => {
+      switch (query?.type) {
+        case QueryType.Filter: {
+          return ref.orderByChild(query.field).startAt(query.value).limitToFirst(10);
+        }
+        case QueryType.Sort: {
+          return ref.orderByChild(query.field);
+        }
+        default: {
+          return ref;
+        }
+      }
+    };
+  }
 
+  public sortBooks(sortField: string, order: number | string, books: Book[]) {
+    if (order === 1) {
+      return books.sort(this.sortASC(sortField));
+    }
+    return books.sort(this.sortDESC(sortField));
+  }
+
+  public sortASC(sortField: string) {
+    return (first, second) => {
+      if (first[sortField] > second[sortField]) {
+        return 1;
+      } else if (first[sortField] < second[sortField]) {
+        return -1;
+      }
+      return 0;
+    };
+  }
+
+  public sortDESC(sortField: string) {
+    return (first, second) => {
+      if (first[sortField] < second[sortField]) {
+        return 1;
+      } else if (first[sortField] > second[sortField]) {
+        return -1;
+      }
+      return 0;
+    };
   }
 
   private isNew(createdDated: Date): boolean {
