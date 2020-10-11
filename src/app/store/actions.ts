@@ -6,6 +6,9 @@ export enum BookActionTypes {
   LoadBooks = '[Book] Load Books',
   LoadBooksSuccess = '[Book] Load Books Success',
   LoadBooksFailure = '[Book] Load Books Failure',
+  LoadBook = '[Book] Load Book',
+  LoadBookSuccess = '[Book] Load Book Success',
+  LoadBookFailure = '[Book] Load Book Failure',
   AddBook = '[Book] Add Book',
   AddBookSuccess = '[Book] Add Book Success',
   AddBookFailure = '[Book] Add Book Failure',
@@ -17,6 +20,9 @@ export enum BookActionTypes {
 export const loadBooksAction = createAction(BookActionTypes.LoadBooks, props<{ query: Query }>());
 export const loadBooksSuccessAction = createAction(BookActionTypes.LoadBooksSuccess, props<{ books: Book[] }>());
 export const loadBooksFailureAction = createAction(BookActionTypes.LoadBooksFailure, props<{ failureMessage: string }>());
+export const loadBookAction = createAction(BookActionTypes.LoadBook, props<{ query: Query }>());
+export const loadBookSuccessAction = createAction(BookActionTypes.LoadBookSuccess, props<{ book: Book }>());
+export const loadBookFailureAction = createAction(BookActionTypes.LoadBookFailure, props<{ failureMessage: string }>());
 export const addBookAction = createAction(BookActionTypes.AddBook, props<{ book: Book }>());
 export const addBookSuccessAction = createAction(BookActionTypes.AddBookSuccess, props<{ successMessage: string }>());
 export const addBookFailureAction = createAction(BookActionTypes.AddBookFailure, props<{ failureMessage: string }>());
@@ -25,6 +31,9 @@ export const BookActions = {
   loadBooksAction,
   loadBooksSuccessAction,
   loadBooksFailureAction,
+  loadBookAction,
+  loadBookSuccessAction,
+  loadBookFailureAction,
   addBookAction,
   addBookSuccessAction,
   addBookFailureAction

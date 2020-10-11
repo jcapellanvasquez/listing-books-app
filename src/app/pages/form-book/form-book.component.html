@@ -1,7 +1,8 @@
 <form (ngSubmit)="save()" [formGroup]="form">
-  <div class="container-wrapper container p-component p-grid p-nogutter p-flex-md-column p-align-center p-mb-sm-6 p-mb-lg-0">
+  <div
+    class="container-wrapper container p-component p-grid p-nogutter p-flex-md-column p-align-center p-mb-sm-6 p-mb-lg-0">
     <div class="p-col-12 p-md-6">
-      <h2 class="title p-align-center">Agregar un nuevo libro</h2>
+      <h2 class="title p-align-center">{{this.formTitle}}</h2>
     </div>
     <div class="p-col-12 p-md-6">
       <div class="p-fluid secondary-color">
@@ -17,7 +18,7 @@
         </div>
         <div class="p-field">
           <label for="synopsis">Sinopsis</label>
-          <textarea id="synopsis" formControlName="synopsis" type="text" pInputText
+          <textarea id="synopsis" formControlName="synopsis" rows="10" type="text" pInputText
                     [ngClass]="{'p-invalid': this.synopsis.invalid && this.synopsis.touched}"></textarea>
           <small *ngIf="this.synopsis.invalid && this.synopsis.touched" class="p-invalid">Es necesario una breve
             synopsis del libro</small>
@@ -30,6 +31,7 @@
           <p-fileUpload
             name="img"
             (onSelect)="onUpload($event)"
+            (onRemove)="removeFile()"
             accept="image/*"
             maxFileSize="1000000"
             [chooseLabel]="'Cargar imagen'"
@@ -38,8 +40,15 @@
             [showUploadButton]="false"
             #files
           >
+            <ng-template pTemplate="content">
+              <div *ngIf="book$ | async as book" class="p-flex-row" >
+                <hr style="margin-left: -1rem; margin-right: -1rem; border-color: #FFA45C; border-style: solid;" class="primary-color">
+                <h3 class="p-component p-text-bold p-my-2">Portada actual.</h3>
+                <img class="tumb-cover" src="{{book.img}}">
+              </div>
+            </ng-template>
           </p-fileUpload>
-          <small *ngIf="this.notImageSelected" class="p-invalid">No haz cargado ninguna imagen.</small>
+          <small *ngIf="this.hasSelectedImage() && this.form.touched" class="p-invalid">No haz cargado ninguna imagen.</small>
         </div>
       </div>
     </div>

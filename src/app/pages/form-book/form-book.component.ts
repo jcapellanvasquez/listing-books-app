@@ -1,13 +1,16 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Message, MessageService, SelectItem} from 'primeng/api';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AppState} from '../../store/app-state';
 import {Store} from '@ngrx/store';
-import {BookActions} from '../../store/actions';
-import {getFailureMessage, getSuccessMessage} from '../../store/selectors';
+import {BookActions, loadBookAction} from '../../store/actions';
+import {getFailureMessage, getSelectedBook, getSuccessMessage} from '../../store/selectors';
 import {Book} from '../../models/book';
 import {FileUpload} from 'primeng/fileupload';
+import {QueryType} from '../../models/query';
+import {Observable} from 'rxjs';
+import {DataService} from '../../app-shared/data.service';
 
 @Component({
   selector: 'app-form-book',
@@ -16,6 +19,8 @@ import {FileUpload} from 'primeng/fileupload';
 })
 export class FormBookComponent implements OnInit {
   public form: FormGroup;
+  public formTitle = 'Agregar un nuevo libro';
+  public book$: Observable<Book>;
   public uploadedFiles: any[] = [];
   private successMessage: Message = {
     severity: 'success',
@@ -26,6 +31,7 @@ export class FormBookComponent implements OnInit {
   private failureMessage: Message = {severity: 'error', summary: 'Registro fallido', detail: 'EL libro no pudo ser creado.', life: 1000};
   public notImageSelected: boolean = false;
   public languages: SelectItem[];
+  public blob: Blob = new Blob();
 
   @ViewChild('files') files: FileUpload;
 
@@ -33,13 +39,14 @@ export class FormBookComponent implements OnInit {
     private messageService: MessageService,
     private router: Router,
     private fb: FormBuilder,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private activeRoute: ActivatedRoute,
+    private db: DataService
   ) {
     this.languages = [
       {label: 'Español', value: 'es'},
       {label: 'Inglés', value: 'en'},
     ];
-
     this.form = this.fb.group({
       title: ['', Validators.required],
       author: [''],
@@ -49,6 +56,11 @@ export class FormBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activeRoute.paramMap.subscribe(params => {
+      this.store.dispatch(loadBookAction({query: {field: 'id', value: params.get('id'), type: QueryType.Filter}}));
+      this.book$ = this.store.select(getSelectedBook);
+    });
+
     this.store.select(getSuccessMessage).subscribe(message => {
       if (message) {
         this.form.reset();
@@ -69,13 +81,25 @@ export class FormBookComponent implements OnInit {
         this.messageService.add(this.failureMessage);
       }
     });
+
+    this.book$.subscribe(book => {
+      this.formTitle = 'Editar libro';
+      this.form.patchValue({...book});
+    });
   }
 
   onUpload(event) {
     for (let file of event.files) {
       this.uploadedFiles.push(file);
-      this.notImageSelected = this.uploadedFiles.length === 0;
     }
+  }
+
+  public removeFile() {
+    this.uploadedFiles = [];
+  }
+
+  public hasSelectedImage(): boolean {
+    return this.notImageSelected = this.uploadedFiles.length === 0;
   }
 
   goBack() {
@@ -83,15 +107,23 @@ export class FormBookComponent implements OnInit {
   }
 
   save() {
-    if (this.form.valid && !this.notImageSelected) {
+    if (this.form.valid && !this.hasSelectedImage()) {
       let file = this.uploadedFiles[0];
       let createdDate = new Date();
-      let book: Book = {...this.form.value, img: '', imageFile: {file: file, name: file.name}, createdDate: createdDate.toISOString()};
+      let book: Book = {
+        ...this.form.value,
+        img: '',
+        imageFile: {file: file, name: file.name},
+        createdDate: createdDate.toISOString(),
+        title: (<string> this.title.value).toLowerCase(),
+        synopsis: (<string> this.synopsis.value).toLowerCase(),
+        author: (<string> this.author.value).toLowerCase(),
+      };
       this.store.dispatch(BookActions.addBookAction({book: book}));
     } else {
       this.title.markAsTouched();
       this.synopsis.markAsTouched();
-      this.notImageSelected = this.uploadedFiles.length === 0;
+      this.form.markAsTouched();
     }
   }
 
@@ -101,6 +133,10 @@ export class FormBookComponent implements OnInit {
 
   get synopsis() {
     return this.form.get('synopsis');
+  }
+
+  get author() {
+    return this.form.get('author');
   }
 
   get img() {

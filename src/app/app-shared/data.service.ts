@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {forkJoin, from, Observable, of} from 'rxjs';
-import {Book} from '../models/book';
+import {Book, Category, ImageFile} from '../models/book';
 import {finalize, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {AngularFireDatabase, AngularFireList, QueryFn} from '@angular/fire/database';
 import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
@@ -20,26 +20,30 @@ export class DataService {
   }
 
   public addBook(book: Book): Observable<{ successMessage }> {
-    // Converting Promise to Observable
-    const ref = this.refStorage('/images-book/' + book.imageFile.name);
-    const task = this.storage.upload('/images-book/' + book.imageFile.name, book.imageFile.file);
-    return from(task).pipe(
-      switchMap(() => ref.getDownloadURL()),
-      map(url => ({...book, img: url})),
-      mergeMap((newBook) => {
-        return from(this.booksDB.push({
-          title: newBook.title,
-          author: newBook.author,
-          synopsis: newBook.synopsis,
-          createdDate: newBook.createdDate,
-          likes: 0,
-          pages: 0,
-          id: '',
-          isNew: true,
-          img: newBook.img,
-          lang: newBook.lang
-        })).pipe(map(response => ({successMessage: 'Libro fue creado.'})));
-      })
+    return from(this.booksDB.push({
+      title: book.title,
+      author: book.author,
+      synopsis: book.synopsis,
+      createdDate: book.createdDate,
+      likes: 0,
+      pages: 0,
+      id: '',
+      isNew: true,
+      img: book.img,
+      lang: book.lang
+    })).pipe(
+      switchMap(createdBook => {
+        const ref = this.refStorage('images-book/' + createdBook.key);
+        const task = this.storage.upload('images-book/' + createdBook.key, book.imageFile.file);
+        return task.snapshotChanges().pipe(
+          switchMap(()=> ref.getDownloadURL()),
+          map((url) => {
+            const taskUpdate = this.booksDB.update(createdBook.key, {
+              img: url
+            });
+            return ({successMessage: 'Libro fue creado.'})
+          })
+        )})
     );
   }
 
@@ -52,7 +56,7 @@ export class DataService {
   }
 
   public getBooks(query: Query): Observable<Book[]> {
-    return this.db.list<Book>('books', this.getQuery(query)).snapshotChanges().pipe(
+    return this.db.list<Book>('books', this.getQueryBooks(query)).snapshotChanges().pipe(
       map(changes => changes.map(book => ({
         ...book.payload.val(),
         id: book.key,
@@ -64,15 +68,30 @@ export class DataService {
         }
         return books;
       }),
-      tap(console.log)
     );
   }
 
-  public getQuery(query: Query): QueryFn {
+  public getBook(query: Query): Observable<Book> {
+    return this.db.list<Book>('books', ref =>{
+      return ref.orderByKey().equalTo(query.value).limitToFirst(1)
+    }).snapshotChanges().pipe(
+      map(changes => changes.map(book => ({
+        ...book.payload.val(),
+        id: book.key,
+        isNew: this.isNew(new Date(book.payload.val().createdDate))
+      }))),
+      map(books => {
+        return books[0];
+      }),
+    );
+  }
+
+
+  public getQueryBooks(query: Query): QueryFn {
     return ref => {
       switch (query?.type) {
         case QueryType.Filter: {
-          return ref.orderByChild(query.field).startAt(query.value).limitToFirst(10);
+          return ref.orderByChild(query.field).startAt(query.value).limitToFirst(1000);
         }
         case QueryType.Sort: {
           return ref.orderByChild(query.field);

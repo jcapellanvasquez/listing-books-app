@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
       filter: ['']
     });
     this.filterOptions = [
-      {label: 'Más recientes', value: {field: 'createdDate', value: 1}},
-      {label: 'Menos recientes', value: {field: 'createdDate', value: -1}},
+      {label: 'Más recientes', value: {field: 'createdDate', value: -1}},
+      {label: 'Menos recientes', value: {field: 'createdDate', value: 1}},
       {label: 'A a la Z', value: {field: 'title', value: 1}},
       {label: 'Z a la A', value: {field: 'title', value: -1}},
     ];
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(BookActions.loadBooksAction({query: null}));
+    this.store.dispatch(BookActions.loadBooksAction({query: this.filterOptions[0].value}));
     this.books$ = this.store.select(getBooks);
     this.store.select(getFailureMessage).subscribe(error => {
       if (error) {
@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
 
   public filter() {
     let query: Query = {
-      value: this.form.get('filter').value,
+      value: (<string> this.form.get('filter').value).toLowerCase(),
       field: 'title',
       type: QueryType.Filter
     };
@@ -72,4 +72,5 @@ export class HomeComponent implements OnInit {
     let query: Query = {...this.form.get('order').value.value, type: QueryType.Sort};
     this.store.dispatch(loadBooksAction({query}));
   }
+
 }

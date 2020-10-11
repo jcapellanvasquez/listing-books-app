@@ -11,7 +11,7 @@
                       dataKey="value"></p-dropdown>
         </div>
         <div class="p-field  p-px-0 p-mx-0 p-text-right">
-          <div class="p-inputgroup p-e">
+          <div class="p-inputgroup p-shadow-1">
             <input formControlName="filter" pInputText type="text" placeholder="Buscar...">
             <button type="submit" pButton pRipple icon="pi pi-search" class="custom-primary-button"></button>
           </div>
@@ -34,9 +34,13 @@
                 <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
                 <img alt="Card" [src]="book.img" class="card-img">
               </p-header>
-              <h3 class="p-my-1 p-text-light p-text-truncate">
+              <h3 class="p-my-1 p-text-truncate secondary-color p-text-bold">
                 {{book.title | titlecase}}
               </h3>
+              <div class="p-card-subtitle subtitle-size">
+                {{book.author | titlecase}}
+              </div>
+
               <p class="w-100 p-text-justify">
                 {{book.synopsis | longString}}
               </p>
@@ -49,7 +53,7 @@
         </div>
       </cdk-virtual-scroll-viewport>
       <ng-template #notFound>
-        <app-not-found>No encontramos nada, intenta con otros filtros...</app-not-found>
+        <app-not-found>No se encontró ningún título, intenta con otro título...</app-not-found>
       </ng-template>
     </div>
   </div>
