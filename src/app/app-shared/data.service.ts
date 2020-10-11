@@ -47,6 +47,37 @@ export class DataService {
     );
   }
 
+  public editBook(book: Book): Observable<{ successMessage }> {
+    console.log('Portada actual',book.img);
+    return from(this.booksDB.update(book.id,{
+      title: book.title,
+      author: book.author,
+      synopsis: book.synopsis,
+      createdDate: book.createdDate,
+      likes: 0,
+      pages: 0,
+      isNew: true,
+      img: book.img,
+      lang: book.lang
+    })).pipe(
+      switchMap(createdBook => {
+        const ref = this.refStorage('images-book/' + book.id);
+        const task = this.storage.upload('images-book/' + book.id, book.imageFile.file);
+        return task.snapshotChanges().pipe(
+          switchMap(()=> ref.getDownloadURL()),
+          map((url) => {
+            const taskUpdate = this.booksDB.update(book.id, {
+              img: url
+            });
+            console.log('Portada nueva', url);
+            return ({successMessage: 'Libro fue editado con exito.'})
+          })
+        )})
+    );
+  }
+
+
+
   public taskStorage(file: string, data: any) {
     return this.storage.upload(file, data);
   }
