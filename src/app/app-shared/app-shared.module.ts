@@ -21,6 +21,7 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import { LongStringPipe } from './long-string.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {SidebarModule} from 'primeng/sidebar';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReactiveFormsModule,
     ToastModule,
     RadioButtonModule,
-    SelectButtonModule
+    SelectButtonModule,
+    SidebarModule
   ],
   exports: [
     InputTextModule,
@@ -64,7 +66,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RadioButtonModule,
     SelectButtonModule,
     LongStringPipe,
-    NotFoundComponent
+    NotFoundComponent,
+    SidebarModule
+
   ],
   providers: [DataService]
 })

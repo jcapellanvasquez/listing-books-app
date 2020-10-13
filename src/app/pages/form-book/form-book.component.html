@@ -21,7 +21,7 @@
           <textarea id="synopsis" formControlName="synopsis" rows="10" type="text" pInputText
                     [ngClass]="{'p-invalid': this.synopsis.invalid && this.synopsis.touched}"></textarea>
           <small *ngIf="this.synopsis.invalid && this.synopsis.touched" class="p-invalid">Es necesario una breve
-            synopsis del libro</small>
+            sinopsis del libro</small>
         </div>
         <div class="p-field">
           <label>Idioma</label>
@@ -41,14 +41,16 @@
             #files
           >
             <ng-template pTemplate="content">
-              <div *ngIf="book$ | async as book" class="p-flex-row" >
-                <hr style="margin-left: -1rem; margin-right: -1rem; border-color: #FFA45C; border-style: solid;" class="primary-color">
+              <div *ngIf="book$ | async as book" class="p-flex-row">
+                <hr style="margin-left: -1rem; margin-right: -1rem; border-color: #FFA45C; border-style: solid;"
+                    class="primary-color">
                 <h3 class="p-component p-text-bold p-my-2">Portada actual.</h3>
                 <img class="tumb-cover" src="{{book.img}}">
               </div>
             </ng-template>
           </p-fileUpload>
-          <small *ngIf="this.hasSelectedImage() && this.form.touched" class="p-invalid">No haz cargado ninguna imagen.</small>
+          <small *ngIf="this.hasSelectedImage() && this.form.touched && !this.book$" class="p-invalid">No haz cargado
+            ninguna imagen.</small>
         </div>
       </div>
     </div>
@@ -58,7 +60,14 @@
           <p-button (click)="goBack()" label="Volver al listado" styleClass="p-button-link secondary-color"></p-button>
         </div>
         <div class="p-col-6" style="text-align: right">
-          <button pButton pRipple type="submit" label="Guardar" class="p-button-raised custom-primary-button"></button>
+          <button pButton
+                  pRipple
+                  type="submit"
+                  label="{{(isSaving$| async ) ? 'Guardando...' : 'Guardar'}}"
+                  class="p-button-raised custom-primary-button"
+                  icon="{{(isSaving$| async ) ? 'pi pi-spin pi-spinner' : 'pi'}}"
+                  [disabled]="(isSaving$| async )"
+          ></button>
         </div>
       </div>
     </div>

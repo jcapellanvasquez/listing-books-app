@@ -26,6 +26,9 @@ export const loadBookFailureAction = createAction(BookActionTypes.LoadBookFailur
 export const addBookAction = createAction(BookActionTypes.AddBook, props<{ book: Book }>());
 export const addBookSuccessAction = createAction(BookActionTypes.AddBookSuccess, props<{ successMessage: string }>());
 export const addBookFailureAction = createAction(BookActionTypes.AddBookFailure, props<{ failureMessage: string }>());
+export const updateBookAction = createAction(BookActionTypes.UpdateBook, props<{ book: Book }>());
+export const updateBookSuccessAction = createAction(BookActionTypes.UpdateBookSuccess, props<{ successMessage: string }>());
+export const updateBookFailureAction = createAction(BookActionTypes.UpdateBookFailure, props<{ failureMessage: string }>());
 
 export const BookActions = {
   loadBooksAction,
@@ -36,5 +39,8 @@ export const BookActions = {
   loadBookFailureAction,
   addBookAction,
   addBookSuccessAction,
-  addBookFailureAction
+  addBookFailureAction,
+  updateBookAction,
+  updateBookSuccessAction,
+  updateBookFailureAction
 };

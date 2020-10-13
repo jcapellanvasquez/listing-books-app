@@ -5,12 +5,12 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AppState} from '../../store/app-state';
 import {Store} from '@ngrx/store';
 import {BookActions, loadBookAction} from '../../store/actions';
-import {getFailureMessage, getSelectedBook, getSuccessMessage} from '../../store/selectors';
+import {getFailureMessage, getIsLoading, getSelectedBook, getSuccessMessage} from '../../store/selectors';
 import {Book} from '../../models/book';
 import {FileUpload} from 'primeng/fileupload';
 import {QueryType} from '../../models/query';
 import {Observable} from 'rxjs';
-import {DataService} from '../../app-shared/data.service';
+import {takeWhile, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-form-book',
@@ -31,7 +31,8 @@ export class FormBookComponent implements OnInit {
   private failureMessage: Message = {severity: 'error', summary: 'Registro fallido', detail: 'EL libro no pudo ser creado.', life: 1000};
   public notImageSelected: boolean = false;
   public languages: SelectItem[];
-  public blob: Blob = new Blob();
+  public isSaving$: Observable<boolean>;
+
 
   @ViewChild('files') files: FileUpload;
 
@@ -40,8 +41,7 @@ export class FormBookComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private store: Store<AppState>,
-    private activeRoute: ActivatedRoute,
-    private db: DataService
+    private activeRoute: ActivatedRoute
   ) {
     this.languages = [
       {label: 'Español', value: 'es'},
@@ -51,22 +51,26 @@ export class FormBookComponent implements OnInit {
       title: ['', Validators.required],
       author: [''],
       synopsis: ['', Validators.required],
-      lang: ['es']
+      lang: ['es'],
+      id: [''],
+      img: ['']
     });
   }
 
   ngOnInit(): void {
-    this.activeRoute.paramMap.subscribe(params => {
+    this.activeRoute.paramMap.pipe(takeWhile((params) => !!params.get('id'))).subscribe(params => {
       this.store.dispatch(loadBookAction({query: {field: 'id', value: params.get('id'), type: QueryType.Filter}}));
       this.book$ = this.store.select(getSelectedBook);
     });
 
     this.store.select(getSuccessMessage).subscribe(message => {
       if (message) {
-        this.form.reset();
-        this.form.patchValue({
-          lang: 'es'
-        });
+        if (!this.book$) {
+          this.form.reset();
+          this.form.patchValue({
+            lang: 'es'
+          });
+        }
         this.files.clear();
         this.messageService.clear();
         this.successMessage.detail = message;
@@ -82,10 +86,13 @@ export class FormBookComponent implements OnInit {
       }
     });
 
-    this.book$.subscribe(book => {
+    this.book$?.subscribe(book => {
       this.formTitle = 'Editar libro';
       this.form.patchValue({...book});
     });
+
+    this.isSaving$ = this.store.select(getIsLoading);
+
   }
 
   onUpload(event) {
@@ -99,7 +106,7 @@ export class FormBookComponent implements OnInit {
   }
 
   public hasSelectedImage(): boolean {
-    return this.notImageSelected = this.uploadedFiles.length === 0;
+    return this.uploadedFiles.length === 0;
   }
 
   goBack() {
@@ -107,19 +114,28 @@ export class FormBookComponent implements OnInit {
   }
 
   save() {
-    if (this.form.valid && !this.hasSelectedImage()) {
+    if (this.form.valid) {
       let file = this.uploadedFiles[0];
       let createdDate = new Date();
       let book: Book = {
         ...this.form.value,
-        img: '',
-        imageFile: {file: file, name: file.name},
-        createdDate: createdDate.toISOString(),
         title: (<string> this.title.value).toLowerCase(),
         synopsis: (<string> this.synopsis.value).toLowerCase(),
         author: (<string> this.author.value).toLowerCase(),
       };
-      this.store.dispatch(BookActions.addBookAction({book: book}));
+
+      if (!this.hasSelectedImage()) {
+        book.imageFile = {file: file, name: file.name};
+      }
+
+      if (this.book$) {
+        this.store.dispatch(BookActions.updateBookAction({book: book}));
+
+      } else {
+        book.createdDate = createdDate.toISOString();
+        this.store.dispatch(BookActions.addBookAction({book: book}));
+      }
+
     } else {
       this.title.markAsTouched();
       this.synopsis.markAsTouched();

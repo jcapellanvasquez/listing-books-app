@@ -9,7 +9,7 @@ import {Message, MessageService, PrimeNGConfig} from 'primeng/api';
 })
 export class AppComponent implements OnInit {
   title = 'listing-books-app';
-
+  showSideBar: boolean = true;
   constructor(private primeNGConfig: PrimeNGConfig) {
   }
 

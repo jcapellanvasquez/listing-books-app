@@ -3,7 +3,7 @@ export interface Book {
   title: string;
   synopsis: string;
   likes: number;
-  createdDate: Date;
+  createdDate: Date | string;
   isNew: boolean;
   pages: number;
   author: string;

@@ -35,47 +35,47 @@ export class DataService {
       switchMap(createdBook => {
         const ref = this.refStorage('images-book/' + createdBook.key);
         const task = this.storage.upload('images-book/' + createdBook.key, book.imageFile.file);
-        return task.snapshotChanges().pipe(
-          switchMap(()=> ref.getDownloadURL()),
+        return from(task).pipe(
+          switchMap(() => ref.getDownloadURL()),
           map((url) => {
             const taskUpdate = this.booksDB.update(createdBook.key, {
               img: url
             });
-            return ({successMessage: 'Libro fue creado.'})
+            return ({successMessage: 'Libro fue creado.'});
           })
-        )})
+        );
+      })
     );
   }
 
-  public editBook(book: Book): Observable<{ successMessage }> {
-    console.log('Portada actual',book.img);
-    return from(this.booksDB.update(book.id,{
+  public updateBook(book: Book): Observable<{ successMessage }> {
+    return from(this.booksDB.update(book.id, {
       title: book.title,
       author: book.author,
       synopsis: book.synopsis,
-      createdDate: book.createdDate,
-      likes: 0,
       pages: 0,
-      isNew: true,
       img: book.img,
       lang: book.lang
     })).pipe(
       switchMap(createdBook => {
+        if (!book?.imageFile) {
+          return of({successMessage: 'Libro fue editado con exito.'});
+        }
         const ref = this.refStorage('images-book/' + book.id);
         const task = this.storage.upload('images-book/' + book.id, book.imageFile.file);
-        return task.snapshotChanges().pipe(
-          switchMap(()=> ref.getDownloadURL()),
+        return from(task).pipe(
+          switchMap(() => ref.getDownloadURL()),
           map((url) => {
             const taskUpdate = this.booksDB.update(book.id, {
               img: url
             });
-            console.log('Portada nueva', url);
-            return ({successMessage: 'Libro fue editado con exito.'})
+            return ({successMessage: 'Libro fue editado con exito.'});
           })
-        )})
+
+        );
+      })
     );
   }
-
 
 
   public taskStorage(file: string, data: any) {
@@ -103,8 +103,8 @@ export class DataService {
   }
 
   public getBook(query: Query): Observable<Book> {
-    return this.db.list<Book>('books', ref =>{
-      return ref.orderByKey().equalTo(query.value).limitToFirst(1)
+    return this.db.list<Book>('books', ref => {
+      return ref.orderByKey().equalTo(query.value).limitToFirst(1);
     }).snapshotChanges().pipe(
       map(changes => changes.map(book => ({
         ...book.payload.val(),

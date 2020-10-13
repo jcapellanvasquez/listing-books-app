@@ -7,3 +7,4 @@ export const getBookById = createSelector(getBooksState, (appState, {id}) => app
 export const getSelectedBook = createSelector(getBooksState, (appState) => appState.selectedBook);
 export const getSuccessMessage = createSelector(getBooksState, appState => appState.successMessage);
 export const getFailureMessage = createSelector(getBooksState, appState => appState.failureMessage);
+export const getIsLoading = createSelector(getBooksState, appState => appState.isLoad);

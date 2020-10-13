@@ -47,6 +47,18 @@ export class BookEffect {
     )
   ));
 
+  updateBook$ = createEffect(() => this.actions$.pipe(
+    ofType(BookActionTypes.UpdateBook),
+    mergeMap(
+      ({book}) => this.bookService.updateBook(book).pipe(
+        map(response => BookActions.updateBookSuccessAction({successMessage: response.successMessage})),
+        catchError((error) => {
+          return of(BookActions.updateBookFailureAction({failureMessage: 'Fallo el salvado'}));
+        })
+      )
+    )
+  ));
+
   constructor(
     private actions$: Actions,
     private bookService: DataService

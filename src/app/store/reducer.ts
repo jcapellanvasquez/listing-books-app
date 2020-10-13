@@ -20,9 +20,12 @@ const appReducer = createReducer(
   on(BookActions.loadBookAction, (appState)=> ({...appState, failureMessage: '', successMessage: ''})),
   on(BookActions.loadBookSuccessAction, (appState,{book}) => ({...appState, selectedBook: book, successMessage: '', failureMessage: ''})),
   on(BookActions.loadBookFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage})),
-  on(BookActions.addBookAction, (appState)=> ({...appState, successMessage: '', failureMessage: ''})),
-  on(BookActions.addBookSuccessAction, (appState, {successMessage})=> ({...appState, successMessage: successMessage})),
-  on(BookActions.addBookFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage})),
+  on(BookActions.addBookAction, (appState)=> ({...appState, successMessage: '', failureMessage: '', isLoad: true})),
+  on(BookActions.addBookSuccessAction, (appState, {successMessage})=> ({...appState, successMessage: successMessage, isLoad: false})),
+  on(BookActions.addBookFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage, isLoad: false})),
+  on(BookActions.updateBookAction, (appState)=> ({...appState, successMessage: '', failureMessage: '', isLoad: true})),
+  on(BookActions.updateBookSuccessAction, (appState, {successMessage})=> ({...appState, successMessage: successMessage, isLoad: false})),
+  on(BookActions.updateBookFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage, isLoad: false})),
 );
 
 export function bookReducer(state: AppState | undefined, action: Action) {

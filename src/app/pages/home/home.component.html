@@ -1,8 +1,8 @@
 <div class="container-wrapper">
   <div class="bg-wave p-grid p-nogutter container">
-    <div class="p-col-12 p-pt-5">
-      <form [formGroup]="form" (ngSubmit)="filter()" class="p-formgroup-inline p-jc-between">
-        <div class="p-field">
+    <div class="p-col-12 p-pt-2 p-pt-md-5">
+      <form [formGroup]="form" (ngSubmit)="filter()" class="p-d-flex p-flex-column p-jc-between p-flex-md-row">
+        <div class="p-field p-order-1 p-order-md-0  p-col-12 p-md-2 sm-nogutter">
           <p-dropdown formControlName="order"
                       styleClass="custom-select"
                       [options]="filterOptions"
@@ -10,7 +10,7 @@
                       (onChange)="sort()"
                       dataKey="value"></p-dropdown>
         </div>
-        <div class="p-field  p-px-0 p-mx-0 p-text-right">
+        <div class="p-field p-px-0 p-mx-0 p-text-right p-order-0 p-order-md-0 p-col-12 p-md-3">
           <div class="p-inputgroup p-shadow-1">
             <input formControlName="filter" pInputText type="text" placeholder="Buscar...">
             <button type="submit" pButton pRipple icon="pi pi-search" class="custom-primary-button"></button>
@@ -22,32 +22,35 @@
       <cdk-virtual-scroll-viewport *ngIf="(this.books$ | async)?.length > 0 ; else notFound"
                                    class="viewport"
                                    itemSize="90">
-        <div class="p-grid p-grid">
+        <div class="p-grid">
           <div *cdkVirtualFor="let book of (this.books$ | async)"
-               class="p-sm-12 p-md-4 p-xl-3 animate__animated animate__fadeIn"
-               style="animation-delay: 200ms">
-            <p-card
-              styleClass="p-card-shadow p-m-3 pointer"
+               class="p-col-12 p-md-5 p-xl-3 sm-nogutter animate__animated animate__fadeIn"
+               style="animation-delay: 200ms; background-color: transparent !important;">
+            <div
+              class="p-card p-card-shadow p-m-3 pointer p-grid home-card"
               (click)="goToBook(book.id)"
             >
-              <p-header>
+              <div class="p-col-12 p-md-12 p-p-sm-0" style="background-color: transparent;">
                 <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
                 <img alt="Card" [src]="book.img" class="card-img">
-              </p-header>
-              <h3 class="p-my-1 p-text-truncate secondary-color p-text-bold">
-                {{book.title | titlecase}}
-              </h3>
-              <div class="p-card-subtitle subtitle-size">
-                {{book.author | titlecase}}
+              </div>
+              <div class="p-p-3 p-col-12 p-md-12 home-card-body p-d-flex p-flex-column">
+                <h3 class="p-my-1 secondary-color p-text-bold">
+                  {{book.title | titlecase}}
+                </h3>
+                <div class="p-card-subtitle subtitle-size">
+                  {{book.author | titlecase}}
+                </div>
+
+                <p class="p-text-justify p-my-0">
+                  {{book.synopsis | longString}}
+                </p>
+                <p class="p-my-1">
+                  ❤ {{book.likes | number}}
+                </p>
               </div>
 
-              <p class="w-100 p-text-justify">
-                {{book.synopsis | longString}}
-              </p>
-              <p>
-                ❤ {{book.likes | number}}
-              </p>
-            </p-card>
+            </div>
           </div>
 
         </div>

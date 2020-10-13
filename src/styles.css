@@ -94,6 +94,23 @@ a:link {
   height: auto;
 }
 
+.home-card {
+
+}
+
+.home-card-body {
+
+}
+
+.custom-select {
+  width: 100%;
+}
+
+
+.cdk-virtual-scroll-content-wrapper {
+  width: 100%;
+}
+
 .p-fileupload-buttonbar {
   background-color: transparent !important;
   border: none !important;
@@ -167,4 +184,36 @@ a:link {
     font-size: 1.4rem;
     color: var(--text-color);
   }
+
+  .container {
+    padding: 0 5%;
+  }
+
+  .sm-nogutter {
+    padding: 0;
+  }
+
+  .m-top {
+    margin-top: 3rem !important;
+  }
+
+  .bg-wave {
+    background-image: none !important;
+  }
+
+  .card-img {
+    width: 100% !important;
+    height: auto !important;
+    /*border-radius: 3px 0 0 3px !important;*/
+  }
+
+  .home-card {
+    /*height: 150px;*/
+  }
+
+  .home-card-body {
+    font-size: .8rem;
+  }
+
+
 }

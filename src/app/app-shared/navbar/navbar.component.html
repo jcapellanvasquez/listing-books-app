@@ -1,10 +1,11 @@
-<div class="bg-primary-color container p-d-flex p-jc-between p-py-3 p-ai-center">
+<div class="bg-primary-color container p-d-flex p-flex-row p-jc-between p-py-3 p-ai-center">
   <div>
     <a routerLink="/"
        class="p-py-3 p-px-2"
     >Libros Swisher</a>
   </div>
   <div>
-    <button (click)="goToNew()" pButton pRipple type="button" label="Agregar Libro" class="p-button-raised custom-primary-button"></button>
+    <button (click)="goToNew()" pButton pRipple type="button" icon="pi pi-plus-circle" label="Agregar Libro" class="p-button-raised custom-primary-button p-d-none p-d-md-block"></button>
+    <button (click)="goToNew()" pButton pRipple type="button" icon="pi pi-plus-circle" class="p-button p-button-rounded custom-primary-button p-button-lg p-d-md-none"></button>
   </div>
 </div>
