@@ -15,6 +15,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {environment} from '../environments/environment';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFireStorageModule, BUCKET} from '@angular/fire/storage';
+import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,11 @@ import {AngularFireStorageModule, BUCKET} from '@angular/fire/storage';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      router: routerReducer
+    }),
     EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument(),
     AppSharedModule,
     ScrollingModule,

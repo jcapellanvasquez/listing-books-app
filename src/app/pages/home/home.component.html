@@ -25,16 +25,13 @@
         <div class="p-grid">
           <div *cdkVirtualFor="let book of (this.books$ | async)"
                class="p-col-12 p-md-5 p-xl-3 sm-nogutter animate__animated animate__fadeIn"
-               style="animation-delay: 200ms; background-color: transparent !important;">
-            <div
-              class="p-card p-card-shadow p-m-3 pointer p-grid home-card"
-              (click)="goToBook(book.id)"
-            >
-              <div class="p-col-12 p-md-12 p-p-sm-0" style="background-color: transparent;">
+               style="animation-delay: 200ms;">
+            <div class="p-card p-card-shadow p-m-3 pointer p-grid home-card " (click)="goToBook(book.id)">
+              <div class="p-col-12 p-md-12 p-p-sm-0">
                 <span *ngIf="book.isNew" class="badged-new">Nuevo</span>
                 <img alt="Card" [src]="book.img" class="card-img">
               </div>
-              <div class="p-p-3 p-col-12 p-md-12 home-card-body p-d-flex p-flex-column">
+              <div class="p-p-4 p-col-12 p-md-12 home-card-body p-d-flex p-flex-column">
                 <h3 class="p-my-1 secondary-color p-text-bold">
                   {{book.title | titlecase}}
                 </h3>
@@ -45,11 +42,7 @@
                 <p class="p-text-justify p-my-0">
                   {{book.synopsis | longString}}
                 </p>
-                <p class="p-my-1">
-                  ❤ {{book.likes | number}}
-                </p>
               </div>
-
             </div>
           </div>
 

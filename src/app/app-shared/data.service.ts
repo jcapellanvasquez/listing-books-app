@@ -7,6 +7,7 @@ import {AngularFireDatabase, AngularFireList, QueryFn} from '@angular/fire/datab
 import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
 import {Query, QueryType} from '../models/query';
 import {redirectUnauthorizedTo} from '@angular/fire/auth-guard';
+import {Permission} from '../models/permission';
 
 @Injectable({
   providedIn: 'any'
@@ -17,6 +18,10 @@ export class DataService {
 
   constructor(private http: HttpClient, private db: AngularFireDatabase, private storage: AngularFireStorage) {
     this.booksDB = this.db.list<Book>('books');
+  }
+
+  public validatedSavePermissionCode(): Observable<Permission> {
+    return this.db.object<Permission>('permissionSaveCode').valueChanges()
   }
 
   public addBook(book: Book): Observable<{ successMessage }> {

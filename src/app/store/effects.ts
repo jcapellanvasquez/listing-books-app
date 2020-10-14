@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {DataService} from '../app-shared/data.service';
 import {BookActions, BookActionTypes} from './actions';
-import {catchError, map, mergeMap, tap} from 'rxjs/operators';
+import {catchError, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {of} from 'rxjs';
 
 @Injectable()
@@ -11,7 +11,7 @@ export class BookEffect {
 
   loadBooks$ = createEffect(() => this.actions$.pipe(
     ofType(BookActionTypes.LoadBooks),
-    mergeMap(
+    switchMap(
       ({query}) => this.bookService.getBooks(query)
         .pipe(
           map(books => BookActions.loadBooksSuccessAction({books})),
@@ -24,7 +24,7 @@ export class BookEffect {
 
   loadBook$ = createEffect(() => this.actions$.pipe(
     ofType(BookActionTypes.LoadBook),
-    mergeMap(
+    switchMap(
       ({query}) => this.bookService.getBook(query)
         .pipe(
           map(book => BookActions.loadBookSuccessAction({book})),
