@@ -73,6 +73,16 @@ export class BookEffect {
     )
   ));
 
+  logoutUser$ = createEffect(() => this.actions$.pipe(
+    ofType(AuthenticateActionType.Logout),
+    switchMap(
+      () => this.authService.logout().pipe(
+        map(() => AuthenticateActions.logoutSuccessAction()),
+        catchError(error => of(AuthenticateActions.logoutFailureAction({failureMessage: error.message})))
+      )
+    )
+  ));
+
   constructor(
     private actions$: Actions,
     private bookService: DataService,

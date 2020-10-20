@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
     this.options = [
       {label: 'Iniciar sesión', icon: 'pi pi-user', command: () => this.login()},
       {label: 'Agregar nuevo libro', icon: 'pi pi-plus-circle', command: () => this.goToNew()},
-      {label: 'Cerrar sesión', icon: 'pi pi-power-off'}
+      {label: 'Cerrar sesión', icon: 'pi pi-power-off', command: () => this.logout()}
     ];
   }
 
@@ -42,6 +42,10 @@ export class NavbarComponent implements OnInit {
 
   login() {
     this.store.dispatch(AuthenticateActions.authenticateAction());
+  }
+
+  logout() {
+    this.store.dispatch(AuthenticateActions.logoutAction());
   }
 
 }

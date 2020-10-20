@@ -31,6 +31,9 @@ const appReducer = createReducer(
   on(AuthenticateActions.authenticateAction, (appState)=> ({...appState, failureMessage: '', successMessage: ''})),
   on(AuthenticateActions.authenticateSuccessAction, (appState,{authUser}) => ({...appState, authUser: authUser, successMessage: '', failureMessage: ''})),
   on(AuthenticateActions.authenticationFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage})),
+  on(AuthenticateActions.logoutAction, (appState)=> ({...appState, failureMessage: '', successMessage: ''})),
+  on(AuthenticateActions.logoutSuccessAction, (appState) => ({...appState, successMessage: '',authUser: null, failureMessage: ''})),
+  on(AuthenticateActions.logoutFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage})),
 );
 
 export function bookReducer(state: AppState | undefined, action: Action) {

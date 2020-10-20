@@ -15,6 +15,7 @@ export class AuthenticateService {
 
   public authenticate(): Observable<User | null> {
     return this.authService.authState.pipe(
+      take(1),
       switchMap(authUser => {
         if (authUser) {
           return this.updateUser(this.mapUser(authUser));
@@ -25,6 +26,12 @@ export class AuthenticateService {
           })
         );
       })
+    );
+  }
+
+  public logout(): Observable<boolean> {
+    return from(this.authService.signOut()).pipe(
+      switchMap(authUser => of(true))
     );
   }
 
