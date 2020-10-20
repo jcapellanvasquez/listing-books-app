@@ -8,3 +8,4 @@ export const getSelectedBook = createSelector(getBooksState, (appState) => appSt
 export const getSuccessMessage = createSelector(getBooksState, appState => appState.successMessage);
 export const getFailureMessage = createSelector(getBooksState, appState => appState.failureMessage);
 export const getIsLoading = createSelector(getBooksState, appState => appState.isLoad);
+export const getUserAuth = createSelector(getBooksState, appState => appState?.authUser);

@@ -22,10 +22,13 @@ import {SelectButtonModule} from 'primeng/selectbutton';
 import { LongStringPipe } from './long-string.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {SidebarModule} from 'primeng/sidebar';
+import {DialogModule} from 'primeng/dialog';
+import { ValidateCodeDialogComponent } from './validate-code-dialog/validate-code-dialog.component';
+import {MenuModule} from 'primeng/menu';
 
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent, LongStringPipe, NotFoundComponent],
+  declarations: [NavbarComponent, FooterComponent, LongStringPipe, NotFoundComponent, ValidateCodeDialogComponent],
   imports: [
     CommonModule,
     InputTextModule,
@@ -45,7 +48,9 @@ import {SidebarModule} from 'primeng/sidebar';
     ToastModule,
     RadioButtonModule,
     SelectButtonModule,
-    SidebarModule
+    SidebarModule,
+    DialogModule,
+    MenuModule
   ],
   exports: [
     InputTextModule,
@@ -67,8 +72,8 @@ import {SidebarModule} from 'primeng/sidebar';
     SelectButtonModule,
     LongStringPipe,
     NotFoundComponent,
-    SidebarModule
-
+    SidebarModule,
+    MenuModule
   ],
   providers: [DataService]
 })

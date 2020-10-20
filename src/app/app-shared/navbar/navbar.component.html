@@ -1,11 +1,31 @@
-<div class="bg-primary-color container p-d-flex p-flex-row p-jc-between p-py-3 p-ai-center">
+<div class="bg-primary-color container p-d-flex p-flex-row p-jc-between p-py-md-3 p-py-1 p-ai-center">
   <div>
     <a routerLink="/"
-       class="p-py-3 p-px-2"
+       class="p-py-3 p-px-2 app-title"
     >Libros Swisher</a>
   </div>
   <div>
-    <button (click)="goToNew()" pButton pRipple type="button" icon="pi pi-plus-circle" label="Agregar Libro" class="p-button-raised custom-primary-button p-d-none p-d-md-block"></button>
-    <button (click)="goToNew()" pButton pRipple type="button" icon="pi pi-plus-circle" class="p-button p-button-rounded custom-primary-button p-button-lg p-d-md-none"></button>
+    <p-menu
+      #menu
+      [popup]="true"
+      [model]="options"
+      appendTo="body"
+    ></p-menu>
+
+    <div class="p-d-flex p-ai-center animate__animated animate__fadeIn"
+         *ngIf="(authUser$ | async) as user; else btnPlaceholder">
+      <h5 class="secondary-color user-card-subtitle p-mr-3">{{user.name | titlecase | longString:'12'}}</h5>
+      <img class="user-photo"
+           style="cursor: pointer;"
+           [src]="user.photoURL"
+           (click)="menu.toggle($event)"
+      >
+    </div>
+
+    <ng-template #btnPlaceholder>
+      <button (click)="menu.toggle($event)" pButton pRipple type="button" icon="pi pi-ellipsis-v"
+              class="p-button-rounded custom-primary-button p-button-outlined">
+      </button>
+    </ng-template>
   </div>
 </div>

@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {FormBookComponent} from './form-book/form-book.component';
 import {SingleViewComponent} from './single-view/single-view.component';
+import {SavePermissionGuard} from '../app-shared/save-permission.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'new',
-    component: FormBookComponent
+    component: FormBookComponent,
+    canActivate: [SavePermissionGuard]
   },
   {
     path: 'book/:id',
@@ -19,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'edit/:id',
-    component: FormBookComponent
+    component: FormBookComponent,
+    canActivate: [SavePermissionGuard]
   }
 ];
 

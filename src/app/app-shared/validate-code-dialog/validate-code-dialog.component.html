@@ -1,0 +1,9 @@
+<div class="p-grid">
+  <div class="p-col-12">
+    <input name="saveCode" class="p-mt-1 w-100" [(ngModel)]="saveCode" pInputText>
+  </div>
+  <div class="p-col-12 p-text-right">
+    <p-button icon="pi pi-sign-in" (click)="this.validateCode()" label="validar"
+              styleClass="p-button-text p-button-plain"></p-button>
+  </div>
+</div>

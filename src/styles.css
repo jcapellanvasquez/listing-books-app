@@ -46,6 +46,10 @@ a:link {
   color: #E6E6E6 !important;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .custom-primary-button {
   color: #5D5D5A !important;
   background: #FFA45C !important;
@@ -78,6 +82,10 @@ a:link {
   font-size: .8rem;
 }
 
+.user-card-subtitle {
+  font-size: .8rem;
+}
+
 .badged-new {
   padding: 0.3rem 0.5rem;
   background-color: var(--primary-color);
@@ -87,6 +95,19 @@ a:link {
   position: absolute;
   margin-top: .6rem;
   margin-left: .6rem;
+}
+
+.user-photo {
+  border-radius: 50%;
+  width: 50px;
+}
+
+.p-menu {
+  top: 75px !important;
+}
+
+.app-title {
+  font-size: 2rem;
 }
 
 .tumb-cover {
@@ -100,6 +121,10 @@ a:link {
 
 .home-card-body {
 
+}
+
+.modal-width {
+  width: 350px;
 }
 
 .custom-select {
@@ -215,5 +240,16 @@ a:link {
     font-size: .8rem;
   }
 
+  .modal-width {
+    width: 350px;
+  }
+
+  .app-title {
+    font-size: 1.3rem;
+  }
+
+  .user-photo {
+    width: 35px;
+  }
 
 }

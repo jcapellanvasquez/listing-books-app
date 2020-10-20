@@ -1,7 +1,8 @@
 import {AppState} from './app-state';
 import {Action, createReducer, on} from '@ngrx/store';
 import {BookActions, BookActionTypes} from './actions';
-import {Query} from '../models/query';
+import {PermissionActions} from './permission-actions';
+import {AuthenticateActions, AuthenticateActionType} from './authenticate-actions';
 
 export const initialAppState: AppState = {
   books: [],
@@ -9,7 +10,8 @@ export const initialAppState: AppState = {
   failureMessage: '',
   successMessage: '',
   isLoad: false,
-  query: null
+  query: null,
+  authUser: null
 };
 
 const appReducer = createReducer(
@@ -26,6 +28,9 @@ const appReducer = createReducer(
   on(BookActions.updateBookAction, (appState)=> ({...appState, successMessage: '', failureMessage: '', isLoad: true})),
   on(BookActions.updateBookSuccessAction, (appState, {successMessage})=> ({...appState, successMessage: successMessage, isLoad: false})),
   on(BookActions.updateBookFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage, isLoad: false})),
+  on(AuthenticateActions.authenticateAction, (appState)=> ({...appState, failureMessage: '', successMessage: ''})),
+  on(AuthenticateActions.authenticateSuccessAction, (appState,{authUser}) => ({...appState, authUser: authUser, successMessage: '', failureMessage: ''})),
+  on(AuthenticateActions.authenticationFailureAction, (appState, {failureMessage})=> ({...appState, failureMessage: failureMessage})),
 );
 
 export function bookReducer(state: AppState | undefined, action: Action) {

@@ -3,11 +3,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {forkJoin, from, Observable, of} from 'rxjs';
 import {Book, Category, ImageFile} from '../models/book';
 import {finalize, map, mergeMap, switchMap, tap} from 'rxjs/operators';
-import {AngularFireDatabase, AngularFireList, QueryFn} from '@angular/fire/database';
+import {AngularFireDatabase, AngularFireList, AngularFireObject, QueryFn} from '@angular/fire/database';
 import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
 import {Query, QueryType} from '../models/query';
-import {redirectUnauthorizedTo} from '@angular/fire/auth-guard';
-import {Permission} from '../models/permission';
+
 
 @Injectable({
   providedIn: 'any'
@@ -16,12 +15,12 @@ export class DataService {
   private booksDB: AngularFireList<Book>;
   private msPerDay: number = 8600000;
 
-  constructor(private http: HttpClient, private db: AngularFireDatabase, private storage: AngularFireStorage) {
+  constructor(
+    private http: HttpClient,
+    private db: AngularFireDatabase,
+    private storage: AngularFireStorage,
+  ) {
     this.booksDB = this.db.list<Book>('books');
-  }
-
-  public validatedSavePermissionCode(): Observable<Permission> {
-    return this.db.object<Permission>('permissionSaveCode').valueChanges()
   }
 
   public addBook(book: Book): Observable<{ successMessage }> {
@@ -76,7 +75,6 @@ export class DataService {
             });
             return ({successMessage: 'Libro fue editado con exito.'});
           })
-
         );
       })
     );
@@ -174,4 +172,5 @@ export class DataService {
     let days: number = 15;
     return (now - createdDated.getTime()) < (this.msPerDay * days);
   }
+
 }

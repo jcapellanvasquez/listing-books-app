@@ -16,6 +16,8 @@ import {environment} from '../environments/environment';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFireStorageModule, BUCKET} from '@angular/fire/storage';
 import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
+import {MessageService} from 'primeng/api';
+import {DialogService} from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
     AngularFireDatabaseModule,
     AngularFireStorageModule
   ],
-  providers: [],
+  providers: [
+    {provide: MessageService},
+    {provide: DialogService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
