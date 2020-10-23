@@ -6,7 +6,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {loadBookAction} from '../../store/actions';
 import {QueryType} from '../../models/query';
-import {getSelectedBook} from '../../store/selectors';
+import {getSelectedBook, getUserAuth} from '../../store/selectors';
+import {User} from '../../models/user';
+import {DataService} from '../../app-shared/data.service';
 
 @Component({
   selector: 'app-single-view',
@@ -15,8 +17,12 @@ import {getSelectedBook} from '../../store/selectors';
 })
 export class SingleViewComponent implements OnInit {
   public book$: Observable<Book>;
+  public authUser$: Observable<User>;
 
-  constructor(private store: Store<AppState>, private activeRoute: ActivatedRoute, private router: Router) {
+
+
+  constructor(private store: Store<AppState>, private activeRoute: ActivatedRoute, private router: Router, public dataService: DataService) {
+    this.authUser$ = this.store.select(getUserAuth);
   }
 
   ngOnInit(): void {

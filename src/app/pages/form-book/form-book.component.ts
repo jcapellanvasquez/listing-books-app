@@ -11,6 +11,7 @@ import {FileUpload} from 'primeng/fileupload';
 import {QueryType} from '../../models/query';
 import {Observable} from 'rxjs';
 import {takeWhile, tap} from 'rxjs/operators';
+import {DataService} from '../../app-shared/data.service';
 
 @Component({
   selector: 'app-form-book',
@@ -41,12 +42,10 @@ export class FormBookComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private store: Store<AppState>,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    public dataService: DataService
   ) {
-    this.languages = [
-      {label: 'Español', value: 'es'},
-      {label: 'Inglés', value: 'en'},
-    ];
+    this.languages = this.dataService.languages;
     this.form = this.fb.group({
       title: ['', Validators.required],
       author: [''],

@@ -6,19 +6,22 @@
   </div>
   <div class="p-lg-4 p-sm-12  secondary-color">
     <h2 class="title p-mb-1">{{book.title | titlecase}}</h2>
-    <button pButton
-            pRipple
-            type="button"
-            label="❤ {{book.likes | number}}"
-            class="p-button-rounded p-button-text p-button-plain like-button-padding"
-    ></button>
+<!--    <button pButton-->
+<!--            pRipple-->
+<!--            type="button"-->
+<!--            label="❤ {{book.likes | number}}"-->
+<!--            class="p-button-rounded p-button-text p-button-plain like-button-padding"-->
+<!--    ></button>-->
     <p id="synopsis" class="p-text-justify">
       {{book.synopsis}}
     </p>
     <p class="p-mb-3">
       <strong>Autor:</strong> {{book.author | titlecase}}
     </p>
-    <div class="p-my-3">
+    <p class="p-mb-3">
+      <strong>Idioma:</strong> {{this.dataService.getLangLabel(book.lang) | titlecase}}
+    </p>
+    <div class="p-my-3" *ngIf="(this.authUser$ | async)?.roles.admin">
       <button (click)="gotToEditBook(book.id)" pButton label="Editar libro" icon="pi pi-pencil" class="p-button-raised custom-primary-button"></button>
     </div>
   </div>

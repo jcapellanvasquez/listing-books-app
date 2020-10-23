@@ -4,15 +4,6 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "AIzaSyBuRQX-bu6AwqwEskL-ohxr0qu1vVWbm-U",
-    authDomain: "listig-books-app.firebaseapp.com",
-    databaseURL: "https://listig-books-app.firebaseio.com",
-    projectId: "listig-books-app",
-    storageBucket: "listig-books-app.appspot.com",
-    messagingSenderId: "91761250946",
-    appId: "1:91761250946:web:0b6cc8cc80f83f89a49a9b"
-  }
 };
 
 /*

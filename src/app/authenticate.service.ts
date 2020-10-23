@@ -37,8 +37,14 @@ export class AuthenticateService {
 
   private updateUser(user: User): Observable<any> {
     let userRef = this.db.object(`users/${user.id}`);
-    userRef.update(user);
-    return userRef.valueChanges();
+    return userRef.snapshotChanges().pipe(
+      switchMap(user => {
+        if (!(<User> user.payload.val())?.roles) {
+          userRef.update(user);
+        }
+        return userRef.valueChanges();
+      })
+    );
   }
 
   private mapUser(data: any): User {

@@ -14,6 +14,11 @@ import {Query, QueryType} from '../models/query';
 export class DataService {
   private booksDB: AngularFireList<Book>;
   private msPerDay: number = 8600000;
+  public languages = [
+    {label: 'Español', value: 'es'},
+    {label: 'Inglés', value: 'en'},
+  ];
+
 
   constructor(
     private http: HttpClient,
@@ -21,6 +26,10 @@ export class DataService {
     private storage: AngularFireStorage,
   ) {
     this.booksDB = this.db.list<Book>('books');
+  }
+
+  public getLangLabel(id: string): string {
+    return this.languages.find( lang => lang.value===id).label
   }
 
   public addBook(book: Book): Observable<{ successMessage }> {

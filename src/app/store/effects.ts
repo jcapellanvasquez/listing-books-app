@@ -45,7 +45,7 @@ export class BookEffect {
       ({book}) => this.bookService.addBook(book).pipe(
         map(response => BookActions.addBookSuccessAction({successMessage: response.successMessage})),
         catchError((error) => {
-          return of(BookActions.addBookFailureAction({failureMessage: 'Fallo el salvado'}));
+          return of(BookActions.addBookFailureAction({failureMessage: error.message}));
         })
       )
     )
@@ -65,7 +65,7 @@ export class BookEffect {
 
   authenticateUser$ = createEffect(() => this.actions$.pipe(
     ofType(AuthenticateActionType.Authenticate),
-    switchMap(
+    mergeMap(
       () => this.authService.authenticate().pipe(
         map(authUser => AuthenticateActions.authenticateSuccessAction({authUser: authUser})),
         catchError(error => of(AuthenticateActions.authenticationFailureAction({failureMessage: error.message})))
