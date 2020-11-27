@@ -29,7 +29,7 @@ export class DataService {
   }
 
   public getLangLabel(id: string): string {
-    return this.languages.find( lang => lang.value===id).label
+    return this.languages.find(lang => lang.value === id).label
   }
 
   public addBook(book: Book): Observable<{ successMessage }> {

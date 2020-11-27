@@ -38,8 +38,8 @@ export class AuthenticateService {
   private updateUser(user: User): Observable<any> {
     let userRef = this.db.object(`users/${user.id}`);
     return userRef.snapshotChanges().pipe(
-      switchMap(user => {
-        if (!(<User> user.payload.val())?.roles) {
+      switchMap(u => {
+        if (!(<User> u.payload.val())?.roles) {
           userRef.update(user);
         }
         return userRef.valueChanges();
@@ -48,12 +48,13 @@ export class AuthenticateService {
   }
 
   private mapUser(data: any): User {
-    return {
+    let u = {
       name: data['displayName'] || '',
       email: data['email'],
       photoURL: data['photoURL'],
       id: data['uid'],
       roles: {reader: true} //default value
     };
+    return <User>u;
   }
 }

@@ -68,7 +68,10 @@ export class BookEffect {
     mergeMap(
       () => this.authService.authenticate().pipe(
         map(authUser => AuthenticateActions.authenticateSuccessAction({authUser: authUser})),
-        catchError(error => of(AuthenticateActions.authenticationFailureAction({failureMessage: error.message})))
+        catchError(error => {
+          console.log(error);
+          return of(AuthenticateActions.authenticationFailureAction({failureMessage: error.message}));
+        })
       )
     )
   ));

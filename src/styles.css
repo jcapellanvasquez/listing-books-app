@@ -23,7 +23,7 @@ a:link {
 }
 
 .container-wrapper {
-  min-height: calc(100vh - 146px);
+  min-height: calc(120vh - 146px);
 }
 
 .bg-primary-color {

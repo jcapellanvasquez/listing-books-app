@@ -24,7 +24,7 @@
                                    itemSize="90">
         <div class="p-grid">
           <div *cdkVirtualFor="let book of (this.books$ | async)"
-               class="p-col-12 p-md-5 p-xl-3 sm-nogutter animate__animated animate__fadeIn"
+               class="p-col-6 p-md-5 p-xl-2 sm-nogutter animate__animated animate__fadeIn"
                style="animation-delay: 200ms;">
             <div class="p-card p-card-shadow p-m-3 pointer p-grid home-card " (click)="goToBook(book.id)">
               <div class="p-col-12 p-md-12 p-p-sm-0">
@@ -40,7 +40,7 @@
                 </div>
 
                 <p class="p-text-justify p-my-0">
-                  {{book.synopsis | longString}}
+                  {{book.synopsis | longString:100}}
                 </p>
               </div>
             </div>
