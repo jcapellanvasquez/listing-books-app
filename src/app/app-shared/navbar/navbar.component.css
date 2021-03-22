@@ -1,1 +1,11 @@
+@media (max-width: 576px) {
+  .logo img {
+      max-width: 80px;
+  }
+
+  .app-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
 

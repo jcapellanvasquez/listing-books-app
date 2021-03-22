@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --primary-color: #85CCFF !important;
+  --primary-color-highlight: #ADDDFF !important;
+  --secondary-color: #414143;
+  --text-color: #414143 !important;
+}
 
 
 body {
-  background-color: #F4F4F4;
+  /*background-color: #F4F4F4;*/
+  background-color: #FFF;
   margin: 0;
 }
 
+.pontano-fonts {
+  font-family: 'Pontano Sans', sans-serif;
+}
+
 a {
-  color: #5D5D5A !important;
+  color: #FFFFFF !important;
   text-decoration: none;
   background-image: none !important;
 }
@@ -23,23 +38,23 @@ a:link {
 }
 
 .container-wrapper {
-  min-height: calc(120vh - 146px);
+  min-height: calc(195vh - 146px);
 }
 
 .bg-primary-color {
-  background-color: #FFA45C !important;
+  background-color: #85CCFF !important;
 }
 
 .bg-secondary-color {
-  background-color: #5D5D5A !important;
+  background-color: #FFFFFF !important;
 }
 
 .primary-color {
-  color: #FFA45C !important;
+  color: #85CCFF !important;
 }
 
 .secondary-color {
-  color: #5D5D5A !important;
+  color: var(--secondary-color) !important;
 }
 
 .muted-color {
@@ -51,17 +66,17 @@ a:link {
 }
 
 .custom-primary-button {
-  color: #5D5D5A !important;
-  background: #FFA45C !important;
-  border: 1px solid #FFA45C !important;
+  color: #FFFFFF;
+  background: #85CCFF !important;
+  border: 1px solid #85CCFF !important;
 }
 
-:root {
-  --primary-color: #FFA45C !important;
-  --primary-color-highlight: #FFCDAB !important;
-  --secondary-color: #5D5D5A !important;
-  --text-color: #5D5D5A !important;
+.custom-menu-button {
+  color: #414143;
+  background: #85CCFF !important;
+  border: 1px solid #85CCFF !important;
 }
+
 
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
   color: #ffffff;
@@ -106,8 +121,17 @@ a:link {
   top: 75px !important;
 }
 
+.logo img {
+  max-width: 150px;
+  height: auto;
+  width: auto;
+}
+
 .app-title {
-  font-size: 2rem;
+  font-family: 'Pontano Sans', sans-serif;
+  letter-spacing: 2px;
+  font-weight: normal !important;
+  font-size: 1.3rem;
 }
 
 .tumb-cover {
@@ -202,6 +226,12 @@ a:link {
   outline-offset: 0;
   box-shadow: 0 0 0 0.2rem var(--primary-color-highlight);
 }
+
+.p-button.p-button-lg .p-button-icon {
+  font-size: 1.8rem !important;
+  font-weight: bold;
+}
+
 
 @media (max-width: 576px) {
   .title {

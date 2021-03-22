@@ -1,6 +1,15 @@
+<div class="p-col-12 bg-primary-color">
+  <div class="p-sm-12 p-md-offset-4 p-md-4 p-py-3">
+    <div class="quote p-text-left">“</div>
+    <p class="p-text-center p-m-0 container-frase secondary-color animate__animated animate__fadeInUp">
+      El mejor momento para plantar un árbol era hace 20 años. El segundo mejor momento es AHORA.
+    </p>
+    <div class="quote p-text-right">”</div>
+  </div>
+</div>
 <div class="container-wrapper">
   <div class="bg-wave p-grid p-nogutter container">
-    <div class="p-col-12 p-pt-2 p-pt-md-5">
+    <div class="p-col-12 p-pt-2 p-pt-md-5 p-mb-6 m-top">
       <form [formGroup]="form" (ngSubmit)="filter()" class="p-d-flex p-flex-column p-jc-between p-flex-md-row">
         <div class="p-field p-order-1 p-order-md-0  p-col-12 p-md-2 sm-nogutter">
           <p-dropdown formControlName="order"
@@ -18,7 +27,7 @@
         </div>
       </form>
     </div>
-    <div class="p-col-12 m-top">
+    <div class="p-col-12">
       <cdk-virtual-scroll-viewport *ngIf="(this.books$ | async)?.length > 0 ; else notFound"
                                    class="viewport"
                                    itemSize="90">

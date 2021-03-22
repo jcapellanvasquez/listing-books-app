@@ -12,7 +12,7 @@
 <!--            label="❤ {{book.likes | number}}"-->
 <!--            class="p-button-rounded p-button-text p-button-plain like-button-padding"-->
 <!--    ></button>-->
-    <p id="synopsis" class="p-text-justify">
+    <p id="synopsis" class="p-text-justify p-text-capitalize">
       {{book.synopsis}}
     </p>
     <p class="p-mb-3">
@@ -22,7 +22,9 @@
       <strong>Idioma:</strong> {{this.dataService.getLangLabel(book.lang) | titlecase}}
     </p>
     <div class="p-my-3" *ngIf="(this.authUser$ | async)?.roles.admin">
-      <button (click)="gotToEditBook(book.id)" pButton label="Editar libro" icon="pi pi-pencil" class="p-button-raised custom-primary-button"></button>
+      <button (click)="gotToEditBook(book.id)"
+              pButton label="Editar libro" icon="pi pi-pencil"
+              class="p-button-raised custom-primary-button"></button>
     </div>
   </div>
 </div>

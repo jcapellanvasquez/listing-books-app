@@ -1,17 +1,35 @@
-.bg-wave {
-  background-image: url("src/assets/image/wave-bg.svg");
+.bg-wave::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: url("src/assets/image/libros-waves.svg");
   width: 100%;
-  min-height: 300px;
+  min-height: 241px;
   background-repeat: no-repeat;
+  background-size: 300% 100%;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
+.container-frase {
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: white !important;
+}
+
+.quote {
+  font-family: 'Secular One', sans-serif;
+  font-size: 4rem;
+  color: #414143;
+}
+
 .viewport {
   width: 100%;
-  height: 100vh;
+  height: 140vh;
   overflow-x: hidden;
 }
 
@@ -23,16 +41,26 @@
 }
 
 .m-top {
-  margin-top: 15rem;
+  margin-top: 16rem;
 }
 
 @media (max-width: 576px) {
-
   .card-img {
     width: 100%;
     max-height: 350px;
     height:  auto;
     border-radius: 3px 3px 0 0;
+  }
+  .container-frase {
+    font-size: 1.55rem;
+  }
+
+  .quote {
+    font-size: 2rem;
+  }
+
+  .bg-wave::after {
+    min-height: 50px;
   }
 }
 

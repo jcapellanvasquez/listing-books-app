@@ -6,8 +6,13 @@
 
 #synopsis {
   min-height: 200px;
+  line-height: 1.8;
 }
 
 .like-button-padding {
   margin-left: -17px;
+}
+
+.container-wrapper {
+  min-height: calc(95vh - 146px);
 }
